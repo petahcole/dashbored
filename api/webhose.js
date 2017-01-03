@@ -1,5 +1,5 @@
 const request = require('request');
-const R = require('Ramda');
+const R = require('ramda');
 const makeUrl = require('./helpers/make-url');
 
 
