@@ -1,0 +1,64 @@
+.background:after {
+    content: "";
+    background-color: #252627;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+    background-image: linear-gradient();
+}
+
+#jumbo-text {
+    font-size: 9em;
+    color: #129490;
+    font-family: 'Poiret One', cursive;
+    margin-top: .3em;
+}
+
+.top-text {
+    display: flex;
+    justify-content: center;
+}
+
+b {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+#about-id {
+    width: 100%;
+    height: 40%;
+    background-color: #595D60;
+    padding: 1em;
+    border-radius: 1em;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.wrap {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #C5C3C6;
+}
+
+.form-horizontal {
+    background-color: #595D60;
+    padding: .2em 1em 1em 1em;
+    margin-top: 2em;
+    border-radius: 1em;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+footer {
+    width: 47%;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Julius Sans One', sans-serif;
+}
