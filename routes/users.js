@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/guest', function(req, res, next){
-  res.render('layout');
+  res.render('default');
 });
 
 router.get('/:id', function(req, res, next){});
