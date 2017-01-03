@@ -1,6 +1,6 @@
 const request = require("request");
 const R = require('Ramda');
-const makeUrl = require('make-url');
+const makeUrl = require('./helpers/make-url');
 
 module.exports = (function() {
   const ENDPOINT = 'http://api.eventful.com/json/events/search?app_key=Pn2LhKWMVtMGjCN4';
