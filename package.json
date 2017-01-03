@@ -1,26 +1,23 @@
 {
-  "name": "DashBored",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "dashbored",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mycroquet/DashBored.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mycroquet/DashBored/issues"
-  },
-  "homepage": "https://github.com/mycroquet/DashBored#readme",
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "dotenv": "^2.0.0",
     "knex": "^0.12.6",
     "pg": "^6.1.2"
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "hbs": "~4.0.1",
+    "morgan": "~1.7.0",
+    "ramda": "^0.23.0",
+    "request": "^2.79.0",
+    "serve-favicon": "~2.3.0"
   }
 }
