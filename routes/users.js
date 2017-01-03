@@ -9,13 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/guest', function(req, res, next){
-  // api.getEvents(`http://www.google.com`);
-  //   res.send("any string")
-  webhose.getNews().then(function(body){
-    res.json(body);
-  });
-
-
+  webhose.getNews({site_category: 'social'}).then(body => res.json(body));
 });
 
 router.get('/:id', function(req, res, next){});
@@ -24,11 +18,7 @@ router.put('/:id', function(req, res, next){});
 
 router.post('/', function(req, res, next){});
 
-// router.get('/guest', function(){
-//   // api.getEvents(`http://www.google.com`);
-//     res.send("any string")
 
-// });
 
 
 module.exports = router;
