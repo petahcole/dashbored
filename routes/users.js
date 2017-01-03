@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/guest', function(req, res, next){
-  webhose.getNews({site_category: 'social'}).then(body => res.json(body));
+  res.render('layout');
 
 });
 
