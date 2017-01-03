@@ -6,7 +6,10 @@ module.exports = (function() {
       return '';
     } else {
       return '&' + R.toPairs(obj)
-        .map(pair => pair.map(words => words.replace(' ', '%20')))
+        .map(pair => {
+          console.log(pair);
+          return pair.map(words => words.replace(' ', '%20'))
+        })
         .map(pair => pair.join('='))
         .join('&');
     }
