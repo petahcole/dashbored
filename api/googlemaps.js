@@ -2,7 +2,7 @@ const request = require("request");
 const makeURL = require("./helpers/make-url")
 
 module.exports = (function() {
-  const ENDPOINT = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?`;
+  const ENDPOINT = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBd50SVB3miUFoYCAPeJ_-Kw1OJj5LW48U`;
 
   const findPlace = function(queryObj)    {
           let url = makeURL(ENDPOINT, queryObj);

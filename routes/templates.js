@@ -23,8 +23,7 @@ router.get('/maps', function(req, res, next) {
   maps.findPlace({
     location: '39.742043,-104.991531',
     radius: '500',
-    type: 'restaurant',
-    key: 'AIzaSyBd50SVB3miUFoYCAPeJ_-Kw1OJj5LW48U'
+    type: 'restaurant'
   })
   .then(body => res.json(body));
 })
