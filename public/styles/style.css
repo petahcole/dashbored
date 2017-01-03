@@ -17,6 +17,7 @@
     color: #129490;
     font-family: 'Poiret One', cursive;
     margin-top: .3em;
+    text-shadow: 10px 10px 5px #1E1E24;
 }
 
 .top-text {
@@ -35,6 +36,7 @@ b {
     padding: 1em;
     border-radius: 1em;
     font-family: 'Julius Sans One', sans-serif;
+    box-shadow: 10px 10px 5px #1E1E24;
 }
 
 .wrap {
@@ -52,6 +54,7 @@ b {
     margin-top: 2em;
     border-radius: 1em;
     font-family: 'Julius Sans One', sans-serif;
+    box-shadow: 10px 10px 5px #1E1E24;
 }
 
 footer {
