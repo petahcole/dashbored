@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var api = require("../api/api")
+var eventful = require("../api/eventful");
+var webhose = require('../api/webhose');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -8,9 +9,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/guest', function(req, res, next){
-  api.getEvents(`http://www.google.com`);  
-    res.send("any string")
-  
+  // api.getEvents(`http://www.google.com`);
+  //   res.send("any string")
+  webhose.getNews().then(function(body){
+    res.json(body);
+  });
+
+
 });
 
 router.get('/:id', function(req, res, next){});
@@ -20,9 +25,9 @@ router.put('/:id', function(req, res, next){});
 router.post('/', function(req, res, next){});
 
 // router.get('/guest', function(){
-//   // api.getEvents(`http://www.google.com`);  
+//   // api.getEvents(`http://www.google.com`);
 //     res.send("any string")
-  
+
 // });
 
 
