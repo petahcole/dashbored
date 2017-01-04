@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var eventful = require("../api/eventful");
-var webhose = require('../api/webhose');
+var news = require('../api/news');
 var maps = require("../api/googlemaps")
 
 /* GET users listing. */
