@@ -1,0 +1,72 @@
+/*HBS*/
+
+body {
+    padding: 50px;
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: #252627;
+    color: #C5C3c6;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.word {
+    display: flex;
+    justify-content: center;
+}
+
+#jumbo-text {
+    font-size: 9em;
+    color: #129490;
+    font-family: 'Poiret One', cursive;
+    margin-top: .3em;
+    text-shadow: 10px 10px 5px #1E1E24;
+}
+
+b {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.glyphicon {
+    font-size: 44;
+}
+
+.colorMe {}
+
+.box {
+    background-color: #595D60;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    font-family: 'Julius Sans One', sans-serif;
+    height: 60vh;
+    width: 30vw;
+    box-shadow: 10px 10px 5px #1E1E24;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+}
+
+@media (max-width: 992px) {
+    .box {
+        width: 100%;
+    }
+    .info-squares {
+        flex-wrap: wrap;
+    }
+}
+
+.info-squares {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
