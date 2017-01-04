@@ -38,7 +38,8 @@ router.get('/maps', function(req, res, next) {
             type: 'restaurant'
         })
         .then(body => res.render("maps", {
-            mapInfo: body
+            mapInfo: body,
+            layout: false
         }));
 })
 

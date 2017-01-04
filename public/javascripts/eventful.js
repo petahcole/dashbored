@@ -9,6 +9,9 @@ console.log("working!");
       $("#news-info").html(newsInfos)
     })
 
+    $.get("/templates/maps").then((mapInfos) => {
+      $("#map-info").html(mapInfos)
+    })
 
 
 
