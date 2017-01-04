@@ -16,7 +16,7 @@ router.get('/news', function(req, res, next) {
 });
 
 router.get('/events', function(req, res, next) {
-  eventful.getEvents({l: 'Denver'}).then(body => res.json(body));
+  eventful.getEvents({l: 'Denver'}).then(body => res.render("events", eventInfo: body));
 });
 
 router.get('/maps', function(req, res, next) {
