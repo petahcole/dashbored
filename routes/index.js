@@ -1,5 +1,5 @@
 var express = require('express');
-var knex = require('./db/db_connection');
+var knex = require('../db/db_connection');
 var router = express.Router();
 
 /* GET home page. */

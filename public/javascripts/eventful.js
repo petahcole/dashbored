@@ -1,3 +1,5 @@
 $(document).ready(function()    {
-    $.get()
+    $.get("/templates/events", function(eventInfo)  {
+    $("#event-info").html(eventInfo)
+    })
 })
