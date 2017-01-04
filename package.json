@@ -6,6 +6,10 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "dotenv": "^2.0.0",
+    "knex": "^0.12.6",
+    "pg": "^6.1.2"
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
