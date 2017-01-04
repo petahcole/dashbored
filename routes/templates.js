@@ -16,8 +16,7 @@ router.get('/news', function(req, res, next) {
 });
 
 router.get('/events', function(req, res, next) {
-
-  eventful.getEvents({l: 'Denver'}).then(body => res.render('eventful', body));
+  eventful.getEvents({l: 'Denver'}).then(body => res.render("events", {eventInfo: body}));
 });
 
 router.get('/maps', function(req, res, next) {
@@ -26,7 +25,7 @@ router.get('/maps', function(req, res, next) {
     radius: '500',
     type: 'restaurant'
   })
-  .then(body => res.json(body));
+  .then(body => res.render("maps", {mapInfo: body}));
 })
 
 
