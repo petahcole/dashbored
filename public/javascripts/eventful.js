@@ -1,4 +1,4 @@
-// $(document).ready(function()    {
+$(document).ready(function()    {
 console.log("working!");
     $.get("/templates/events").then((eventInfo) => {
 
@@ -14,4 +14,4 @@ console.log("working!");
 
 
 
-// })
+})
