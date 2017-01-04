@@ -12,11 +12,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/news', function(req, res, next) {
-  webhose.getNews({site_category: 'social'}).then(body => res.json(body));
+  webhose.getNews({site_category: 'sports'}).then(body => res.json(body));
 });
 
 router.get('/events', function(req, res, next) {
-  eventful.getEvents({l: 'Denver'}).then(body => res.json(body));
+
+  eventful.getEvents({l: 'Denver'}).then(body => res.render('eventful', body));
 });
 
 router.get('/maps', function(req, res, next) {
