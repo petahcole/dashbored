@@ -1,5 +1,17 @@
-$(document).ready(function()    {
-    $.get("/templates/events", function(eventInfo)  {
-    $("#event-info").html(eventInfo)
+// $(document).ready(function()    {
+console.log("working!");
+    $.get("/templates/events").then((eventInfo) => {
+
+      $("#event-info").html(eventInfo)
     })
-})
+
+    $.get("/templates/news").then((newsInfos) => {
+      $("#news-info").html(newsInfos)
+    })
+
+
+
+
+
+
+// })

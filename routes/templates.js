@@ -16,14 +16,18 @@ router.get('/news', function(req, res, next) {
             source: 'bbc-news',
             apiKey: 'a405b1953efe426d900f159c7ac4de98'
         })
-        .then(body => res.json(body));
+        .then(body => res.render("news", {
+            newsInfo: body,
+            layout: false
+        }));
 });
 
 router.get('/events', function(req, res, next) {
     eventful.getEvents({
         l: 'Denver'
     }).then(body => res.render("events", {
-        eventInfo: body
+        eventInfo: body,
+        layout: false
     }));
 });
 
