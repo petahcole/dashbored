@@ -1,11 +1,24 @@
 // knex
 
-// module.exports =  {
-//   findOne: ,
+module.exports =
+
+    loadDash: function(username) {
+        return knex('user').where('user.username', username)
+            .join('user_preference', 'user.id', '=', 'user_preference.user_id')
+            .join('user_role', 'user.id', '=', 'user_role.user.id')
+            .select('user.username', 'user.password', 'user_preference.pref_type_id', 'user_role.user_id')
+    }
+    validSignUp: function(username) {
+        return knex('user').where('username', username)
+    }
+    validSignIn: function(username, password) {
+        return knex('users').where({
+            username: 'username',
+            password: 'password'
+        })
+    }
+
 //
-// }
-// knex.select('username', 'password', 'pref_id', 'role_id').from('user')
-//     .join()
 //
 //     ```sql
 //     SELECT u.username, u.password, up.pref_type_id, ur.role_id

@@ -1,12 +1,14 @@
 {{#each newsInfo}}
 
-<a href= {{url}}>
-<div>
+<div id="news-info">
+  <!-- <p>{{author}}</p> -->
   <img src= {{urlToImage}}>
+  <a href= {{url}}>
   <h3>{{title}}</h3>
   <p>{{description}}</p>
-  <p>{{author}}</p>
+  </a>
 </div>
-</a>
+
+<br></br>
 
 {{/each}}
