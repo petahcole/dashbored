@@ -7,7 +7,7 @@ var userModel = require('../model/user')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    userModel.loadDash('mycroquet').then(function(result) {
+    userModel.loadDash(req.body.username).then(function(result) {
         res.send(result)
     })
 });
