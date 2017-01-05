@@ -25,7 +25,8 @@ router.get('/news', function(req, res, next) {
 router.get('/events', function(req, res, next) {
     eventful.getEvents({
         l: 'Denver'
-    }).then(body => res.render("events", {
+    })
+    .then(body => res.render("events", {
         eventInfo: body,
         layout: false
     }));
