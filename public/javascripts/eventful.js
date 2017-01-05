@@ -1,7 +1,5 @@
 $(document).ready(function() {
     $.get("/templates/events").then((eventInfo) => {
-        console.log("INFO: ");
-        console.log(eventInfo);
         $("#event-info").html(eventInfo)
     }).catch(error => console.error);
 

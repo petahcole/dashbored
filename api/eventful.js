@@ -26,7 +26,6 @@ module.exports = (function() {
     return new Promise(function (resolve, reject) {
       request(url, function(err, res, body) {
         if (!err) {
-          console.log(JSON.parse(body));
           resolve(filterInfo(JSON.parse(body)));
         } else {
           reject(err);

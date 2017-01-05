@@ -1,10 +1,9 @@
 
-var $username = $('#inputUsername').val()
-var $password = $('#inputPassword3').val()
-
-
-
-$('#sign-in').click(function(event){
-  event.preventDefault();
-  console.log($username);
-})
+// var $username = $('#inputUsername').val()
+// var $password = $('#inputPassword3').val()
+// $.post("/login", {username: $username,
+//                   password: $password})
+//                   .done(function(response)  {
+//                     console.log("success")
+//                   })
+// })
