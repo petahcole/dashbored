@@ -12,6 +12,9 @@ var userPref = require('../model/user_pref')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
+    userModel.loadDash(req.body.username).then(function(result) {
+        res.send(result)
+    })
 });
 
 router.get('/guest', function(req, res, next) {
