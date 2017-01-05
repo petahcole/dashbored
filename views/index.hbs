@@ -63,10 +63,29 @@
             <h4 class="modal-title" id="myModalLabel">DashBored</h4>
           </div>
           <div class="modal-body">
-            {{> register_form}}
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <form action="/users" method="post">
+              <fieldset class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password" class="form-control" placeholder="Password" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="text" name="confirm-password" class="form-control" placeholder="Confirm Password" required>
+              </fieldset>
+              <div class="error-container">
+              </div>
+              <fieldset>
+                <button id="register-submit" type="submit" class="btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
           </div>
         </div>
       </div>
