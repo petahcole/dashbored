@@ -20,7 +20,6 @@ router.get('/:id', function(req, res, next) {});
 
 router.put('/:id', function(req, res, next) {});
 
-
 router.post('/', function(req, res, next){
   console.log(req.body);
   res.send('received something');
