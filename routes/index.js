@@ -10,11 +10,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-    var username = req.body.username
+    var username = req.body.user_name
     var password = req.body.password
+console.log(username, password);
 
     userModel.validSignIn(username, password)
         .then(function(result) {
+          console.log(result);
             if (username == result[0].username && bcrypt.compareSync(password, result[0].password)) {
                 res.redirect('/users/guest')
             } else {
