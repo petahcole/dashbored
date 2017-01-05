@@ -1,24 +1,20 @@
 /*HBS*/
 
 body {
-    padding: 50px;
+    padding: 3em;
     font-family: 'Julius Sans One', sans-serif;
     background-color: #252627;
     color: #C5C3c6;
 }
 
-a {
-    color: #00B7FF;
+.usernName {
+    font-size: 1.5em;
+    color: #6B7075;
 }
 
-.top {
+header {
     display: flex;
     justify-content: space-between;
-}
-
-.word {
-    display: flex;
-    justify-content: center;
 }
 
 #jumbo-text {
@@ -34,26 +30,24 @@ b {
 }
 
 .glyphicon {
-    font-size: 44;
-}
-
-.colorMe {}
-
-.box {
-    background-color: #595D60;
-    margin: 1em;
-    padding: 1em;
-    border-radius: 1em;
-    font-family: 'Julius Sans One', sans-serif;
-    height: 60vh;
-    width: 30vw;
-    box-shadow: 10px 10px 5px #1E1E24;
-}
-
-h2 {
-    display: flex;
-    justify-content: center;
     font-size: 4em;
+}
+
+.btn {
+    background-color: orange;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2.7vh;
+    box-shadow: 5px 5px 2px #46494C;
+    border: none;
+    width: 19em;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+.info-squares {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media (max-width: 992px) {
@@ -65,8 +59,34 @@ h2 {
     }
 }
 
-.info-squares {
+nav {
+    /*background-color: orange;*/
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+}
+
+img {
+    height: 10em;
+}
+
+.modules-logo {
+    height: 5em;
+}
+
+#module {
+    background-color: #595D60;
+    margin: 1em;
+    padding: 1em;
+    border-radius: .5em;
+    font-family: 'Julius Sans One', sans-serif;
+    height: 17em;
+    width: 35em;
+    box-shadow: 10px 10px 5px #1E1E24;
+    border: none;
+}
+
+.modal-content {
+    color: #6B7075;
 }
