@@ -1,4 +1,5 @@
 function validatePassword(password, passwordConfirm) {
+
   return password === passwordConfirm;
 }
 
@@ -13,7 +14,7 @@ function clearAlert() {
 }
 
 $('#register-submit').click(function(event) {
-  let password = $('input[name="password"]').val();
+  let password = $('#register-pass').val();
   let confirmPassword = $('input[name="confirm-password"]').val();
   let isValid = validatePassword(password, confirmPassword);
   if(isValid) {
