@@ -2,23 +2,33 @@ var express = require('express');
 var knex = require('../db/db_connection');
 var router = express.Router();
 var userModel = require('../model/user');
+var setCookie = require('../helpers/set-cookie');
 const bcrypt = require('bcryptjs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    if (req.cookies.dashId) {
+      let id = req.cookies.dashId;
+      res.redirect(`users/${id}`);
+    } else {
+      res.render('index');
+    }
 });
 
 router.post('/login', function(req, res, next) {
     var username = req.body.user_name
     var password = req.body.password
-console.log(username, password);
+    console.log(username, password);
 
     userModel.validSignIn(username, password)
         .then(function(result) {
-          console.log(result);
             if (username == result[0].username && bcrypt.compareSync(password, result[0].password)) {
-                res.redirect('/users/guest')
+                setCookie(res, {dashUsername: username}).then(function() {
+                  res.redirect('/users/guest');
+                }).catch(function(err) {
+                  console.log(err);
+                  res.redirect('/users/guest');
+                });
             } else {
                 res.redirect('/')
             }
