@@ -11,10 +11,10 @@ module.exports = {
             .where('user.username', username)
 
     },
-    validSignUp: function(email, username) {
+    validSignUp: function(email) {
         return knex('user').where({
             email: email
-        })
+        }).first()
     },
     validSignIn: function(username, password) {
         return knex('user').where({
@@ -32,6 +32,4 @@ module.exports = {
     getUserByUsername: function(username) {
         return knex('user').first().where('username', username);
     }
-
-
 }
