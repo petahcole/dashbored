@@ -11,12 +11,15 @@ module.exports = {
             .where('user.username', username)
 
     },
-    validSignUp: function(username) {
-        return knex('user').where('username', username)
+    validSignUp: function(email, username) {
+        return knex('user').where({
+            email: email
+        })
     },
     validSignIn: function(username, password) {
         return knex('user').where({
             username: username,
+            password: password
         })
     },
     createUser: function(userInfo) {
@@ -24,12 +27,10 @@ module.exports = {
     },
     getUser: function(userID)   {
         return knex('user').select("username").where("id", userID)
-<<<<<<< HEAD
-=======
+
     },
     getUserByUsername: function(username) {
         return knex('user').first().where('username', username);
->>>>>>> cookies
     }
 
 
