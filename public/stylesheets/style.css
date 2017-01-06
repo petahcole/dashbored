@@ -119,6 +119,12 @@
         justify-content: center;
     }
 
+    .footer {
+        width: 100vw;
+        height: 25vh;
+        background-color: #00303F;
+    }
+
     @media (max-width: 992px) {
         body {
             padding: 2em;
