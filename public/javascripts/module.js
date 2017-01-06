@@ -5,9 +5,9 @@ $(document).ready(function() {
 
     $.get("/templates/news").then((newsInfos) => {
         $("#news-info").html(newsInfos)
-    })
+    }).catch(error => console.error);
 
     $.get("/templates/maps").then((mapInfos) => {
         $("#map-info").html(mapInfos)
-    })
+    }).catch(error => console.error);
 })
