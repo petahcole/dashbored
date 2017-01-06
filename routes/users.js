@@ -27,25 +27,28 @@ router.get('/:id', function(req, res, next) {
       !!realId ? res.redirect(`/users/${realId}`) : res.redirect('/');
     }
     userModel.getUser(req.params.id)
-    .then(username =>  {
+    .then(username =>  {  
        userModel.loadDash(username[0].username)
        .then(results    =>  {
-           console.log(results[0])
-           res.render("user", {userInfo: results[0]})
+           console.log(results)
+           res.render("user", {userInfo: results})
        })
     })
 });
 
-router.put('/:id', function(req, res, next) {});
+router.post('/:id', function(req, res, next) {
+    console.log(req.body)
+});
 
 router.post('/', function(req, res, next) {
+
   var userInfo = {
          username: req.body.username,
          password: bcrypt.hashSync(req.body.password),
          email: req.body.email,
          joined: new Date()
      }
-  console.log("hit me");
+
      user.createUser(userInfo).then(function(result) {
      var userId = result[0];
      userPref.savePreferences(userId, userPrefIds).then(function(data) {
@@ -65,7 +68,6 @@ router.post('/', function(req, res, next) {
      }
    })
 })
-
 
 function extractPrefIds(obj) {
     var results = [];
