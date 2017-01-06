@@ -140,11 +140,11 @@
         color: #DCAE1D;
     }
 
-    a {
+    .footer a {
         color: #DCAE1D;
     }
 
-    a:hover {
+    .footer a:hover {
         color: #CAE4DB;
         text-decoration: none;
         cursor: pointer;
