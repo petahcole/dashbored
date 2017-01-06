@@ -27,12 +27,11 @@ router.get('/:id', function(req, res, next) {
       !!realId ? res.redirect(`/users/${realId}`) : res.redirect('/');
     }
     userModel.getUser(req.params.id)
-    .then(username =>  {
-      console.log(username[0].username)
-       userModel.loadDash("gmail")
+    .then(username =>  {  
+       userModel.loadDash(username[0].username)
        .then(results    =>  {
            console.log(results)
-           res.render("user", {userInfo: results[0]})
+           res.render("user", {userInfo: results})
        })
     })
 });
