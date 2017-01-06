@@ -1,92 +1,149 @@
-/*HBS*/
+    /*HBS*/
 
-body {
-    padding: 3em;
-    font-family: 'Julius Sans One', sans-serif;
-    background-color: #252627;
-    color: #C5C3c6;
-}
+    body {
+        padding-left: 3em;
+        padding-right: 3em;
+        font-family: 'Julius Sans One', sans-serif;
+        background-color: #F0F0F0;
+        color: #C5C3c6;
+    }
 
-.usernName {
-    font-size: 1.5em;
-    color: #6B7075;
-}
+    .logo {
+        display: inline-block;
+    }
 
-header {
-    display: flex;
-    justify-content: space-between;
-}
+    .menu {
+        display: inline-block;
+        margin-top: 1em;
+        color: #DCAE1D;
+    }
 
-#jumbo-text {
-    font-size: 9em;
-    color: #129490;
-    font-family: 'Poiret One', cursive;
-    margin-top: .3em;
-    text-shadow: 10px 10px 5px #1E1E24;
-}
+    .usernName {
+        display: inline-block;
+        margin-top: 4em;
+        font-size: 1.5em;
+        color: #DCAE1D;
+    }
 
-b {
-    font-family: 'Julius Sans One', sans-serif;
-}
+    header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2em;
+    }
 
-.glyphicon {
-    font-size: 4em;
-}
+    #jumbo-text {
+        font-size: 9em;
+        color: #129490;
+        font-family: 'Poiret One', cursive;
+        margin-top: 0;
+        /*text-shadow: 5px 5px 10px #1E1E24;*/
+    }
 
-.btn {
-    background-color: orange;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 2.7vh;
-    box-shadow: 5px 5px 2px #46494C;
-    border: none;
-    width: 19em;
-    margin-top: 2em;
-    margin-left: 1em;
-}
+    b {
+        font-family: 'Julius Sans One', sans-serif;
+    }
 
-.info-squares {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+    .glyphicon {
+        font-size: 4em;
+    }
 
-@media (max-width: 992px) {
-    .box {
+    .btn-container {
+        display: flex;
+        justify-content: center;
         width: 100%;
     }
-    .info-squares {
-        flex-wrap: wrap;
+
+    .btn {
+        background-color: #DCAE1D;
+        color: black;
+        font-family: 'Julius Sans One', sans-serif;
+        font-size: 1.6em;
+        /*box-shadow: 5px 5px 10px #46494C;*/
+        border: none;
+        width: 80%;
+        margin-top: 2em;
     }
-}
 
-nav {
-    /*background-color: orange;*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5em;
-}
+    .btn:hover {
+        background-color: #DCAE1D;
+        opacity: .8;
+        color: black;
+    }
 
-img {
-    height: 10em;
-}
+    .btn-warning:focus {
+        color: black !important;
+        background-color: #DCAE1D !important;
+        border-color: none !important;
+    }
 
-.modules-logo {
-    height: 5em;
-}
+    .info-squares {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-#module {
-    background-color: #595D60;
-    margin: 1em;
-    padding: 1em;
-    border-radius: .5em;
-    font-family: 'Julius Sans One', sans-serif;
-    height: 17em;
-    width: 35em;
-    box-shadow: 10px 10px 5px #1E1E24;
-    border: none;
-}
+    nav {
+        /*background-color: orange;*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5em;
+    }
 
-.modal-content {
-    color: #6B7075;
-}
+    img {
+        height: 10em;
+    }
+
+    .modules-logo {
+        height: 5em;
+    }
+
+    #module {
+        background-color: #00303F;
+        margin: 1em;
+        padding: 1em;
+        border-radius: .5em;
+        font-family: 'Julius Sans One', sans-serif;
+        height: 17em;
+        width: 35em;
+        box-shadow: 5px 5px 10px #1E1E24;
+        border: none;
+    }
+
+    .modal-content {
+        color: #6B7075;
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 992px) {
+        body {
+            padding: 2em;
+        }
+        header {
+            display: flex;
+            margin-bottom: .5em;
+            justify-content: center;
+        }
+        .mobile-logo {
+            margin-right: 1em;
+        }
+        .usernName {
+            display: none;
+            font-size: .5em;
+        }
+        .logo {
+            display: block;
+            font-size: .5em;
+        }
+        #module {
+            width: 90vw;
+            padding-bottom: 18em;
+        }
+        .info-squares {
+            flex-wrap: wrap;
+        }
+    }
