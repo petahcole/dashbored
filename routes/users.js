@@ -36,7 +36,9 @@ router.get('/:id', function(req, res, next) {
     })
 });
 
-router.put('/:id', function(req, res, next) {});
+router.post('/:id', function(req, res, next) {
+    console.log(req.body)
+});
 
 
 function validUser(user){
