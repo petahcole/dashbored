@@ -41,21 +41,23 @@ router.post('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-
   var userInfo = {
          username: req.body.username,
          password: bcrypt.hashSync(req.body.password),
          email: req.body.email,
          joined: new Date()
-     }
+  }
+
+  var userPrefIds = extractPrefIds(req.body);
 
      user.createUser(userInfo).then(function(result) {
-     var userId = result[0];
-     userPref.savePreferences(userId, userPrefIds).then(function(data) {
-       setCookie(res, {dashId: userId}).then(() => {
-         res.redirect(`/users/${userId}`);
-       });
-     })
+       console.log('doing other stuff');
+       var userId = result[0];
+       userPref.savePreferences(userId, userPrefIds).then(function(data) {
+         setCookie(res, {dashId: userId}).then(() => {
+           res.redirect(`/users/${userId}`);
+         });
+       })
    }).catch(function(err){
      if (err.constraint === "user_username_unique") {
        res.send({
@@ -65,6 +67,8 @@ router.post('/', function(req, res, next) {
        res.send({
          message: 'Email already taken!'
        })
+     } else {
+       console.log(err);
      }
    })
 })
