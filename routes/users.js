@@ -28,9 +28,10 @@ router.get('/:id', function(req, res, next) {
     }
     userModel.getUser(req.params.id)
     .then(username =>  {
-       userModel.loadDash(username[0].username)
+      console.log(username[0].username)
+       userModel.loadDash("gmail")
        .then(results    =>  {
-           console.log(results[0])
+           console.log(results)
            res.render("user", {userInfo: results[0]})
        })
     })
@@ -63,7 +64,7 @@ router.post('/', function(req, res, next) {
     if (validUser(req.body)) {
       user.validSignUp(req.body.email)
         .then(result => {
-          if (result.length != 0) {
+          if (result.length == 0) {
             // this is unique
             //then hash password
             bcrypt.hash(req.body.password, 10)
