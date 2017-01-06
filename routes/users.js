@@ -45,7 +45,6 @@ router.post('/', function(req, res, next) {
          email: req.body.email,
          joined: new Date()
      }
-  console.log("hit me");
      user.createUser(userInfo).then(function(result) {
      var userId = result[0];
      userPref.savePreferences(userId, userPrefIds).then(function(data) {

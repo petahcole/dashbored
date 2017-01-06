@@ -18,8 +18,7 @@ module.exports = {
     },
     validSignIn: function(username, password) {
         return knex('user').where({
-            username: username,
-            password: password
+            username: username
         })
     },
     createUser: function(userInfo) {
