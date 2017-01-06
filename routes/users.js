@@ -7,6 +7,7 @@ var userModel = require('../model/user')
 var user = require('../model/user')
 var bcrypt = require('bcryptjs')
 var userPref = require('../model/user_pref')
+var setCookie = require('../helpers/set-cookie');
 
 
 /* GET users listing. */
@@ -42,16 +43,15 @@ router.post('/', function(req, res, next) {
         joined: new Date()
     }
 
-    var userPrefIds = extractPrefIds(req.body)
+    var userPrefIds = extractPrefIds(req.body);
 
     user.createUser(userInfo).then(function(result) {
-
         var userId = result[0];
-
         userPref.savePreferences(userId, userPrefIds).then(function(data) {
+            setCookie(res, userId);
             res.redirect(`/users/${userId}`);
-        })
-    })
+        });
+    });
 });
 
 
@@ -65,5 +65,6 @@ function extractPrefIds(obj) {
     }
     return results;
 }
+
 
 module.exports = router;
