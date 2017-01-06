@@ -22,9 +22,6 @@ router.get('/guest', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-<<<<<<< Updated upstream
-    res.send('welcome to your dashbored!!!!');
-=======
     if (req.cookies.dashId !== req.params.id) {
       let realId = req.cookies.dashId;
       res.redirect(`/users/${realId}`);
@@ -37,7 +34,6 @@ router.get('/:id', function(req, res, next) {
            res.render("user", {userInfo: results[0]})
        })
     })
->>>>>>> Stashed changes
 });
 
 router.put('/:id', function(req, res, next) {});
