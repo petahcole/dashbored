@@ -22,9 +22,13 @@ router.get('/guest', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-    userModel.loadDash(req.body.username)
-    .then(results   =>  {
-        res.send(results)
+    userModel.getUser(req.params.id)
+    .then(username    =>  {
+       userModel.loadDash(username[0].username)
+       .then(results    =>  {
+           console.log(results[0])
+           res.render("user", {userInfo: results[0]})
+       })
     })
 });
 
