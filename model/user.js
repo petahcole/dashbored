@@ -6,8 +6,8 @@ module.exports = {
     loadDash: function(username) {
         return knex('user')
             .join('user_preference', 'user_preference.user_id', '=', 'user.id')
-            .join('user_role', 'user_role.user_id', '=', 'user.id')
-            .select('user.username', 'user.password', 'user_preference.pref_type_id', 'user_role.user_id')
+            // .join('user_role', 'user_role.user_id', '=', 'user.id')
+            .select('user.id','user.username', 'user.password', 'user_preference.pref_type_id')
             .where('user.username', username)
 
     },
@@ -19,7 +19,6 @@ module.exports = {
     validSignIn: function(username, password) {
         return knex('user').where({
             username: username,
-            password: password
         })
     },
     createUser: function(userInfo) {
