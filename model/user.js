@@ -21,6 +21,12 @@ module.exports = {
     },
     createUser: function(userInfo) {
         return knex('user').returning('id').insert(userInfo)
+    },
+    getUser: function(userID)   {
+        return knex('user').select("username").where("id", userID)
+    },
+    getUserByUsername: function(username) {
+        return knex('user').first().where('username', username);
     }
 
 

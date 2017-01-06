@@ -1,9 +1,24 @@
+const userModel = require('../model/user');
+
 module.exports = function setCookie(res, userObj) {
-  let tenYearsMilli = 315569260000;
-  let options = {
-    maxAge: tenYearsMilli
-  };
-  for (key in userObj) {
-    res.cookie(key, userObj[key], options);
-  }
+  return new Promise(function(resolve, reject) {
+    let tenYearsMilli = 315569260000;
+    let options = {
+      maxAge: tenYearsMilli
+    };
+    if (!userObj.dashUsername && !userObj.dashId) {
+      reject(new Error('setCookie must take an object with either a dashUsername or dashId!'));
+    } else {
+      if (!userObj.dashId) {
+        userModel.getUserByUsername(userObj.dashUsername).then(function(user) {
+          console.log(user);
+          res.cookie('dashId', user.id);
+          resolve(true);
+        })
+      } else {
+        res.cookie('dashId', userObj.dashId);
+        resolve(true);
+      }
+    }
+  });
 }

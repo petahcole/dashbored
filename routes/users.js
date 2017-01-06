@@ -12,7 +12,6 @@ var setCookie = require('../helpers/set-cookie');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
     userModel.loadDash(req.body.username).then(function(result) {
         res.send(result)
     })
@@ -23,7 +22,22 @@ router.get('/guest', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
+<<<<<<< Updated upstream
     res.send('welcome to your dashbored!!!!');
+=======
+    if (req.cookies.dashId !== req.params.id) {
+      let realId = req.cookies.dashId;
+      res.redirect(`/users/${realId}`);
+    }
+    userModel.getUser(req.params.id)
+    .then(username    =>  {
+       userModel.loadDash(username[0].username)
+       .then(results    =>  {
+           console.log(results[0])
+           res.render("user", {userInfo: results[0]})
+       })
+    })
+>>>>>>> Stashed changes
 });
 
 router.put('/:id', function(req, res, next) {});
@@ -41,8 +55,9 @@ router.post('/', function(req, res, next) {
     user.createUser(userInfo).then(function(result) {
         var userId = result[0];
         userPref.savePreferences(userId, userPrefIds).then(function(data) {
-            setCookie(res, userId);
-            res.redirect(`/users/${userId}`);
+            setCookie(res, {dashId: userId}).then(() => {
+                res.redirect(`/users/${userId}`);
+            });
         });
     });
 });
