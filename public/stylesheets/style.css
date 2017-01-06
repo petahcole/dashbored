@@ -1,14 +1,15 @@
     /*HBS*/
 
     body {
-        padding-left: 3em;
-        padding-right: 3em;
         font-family: 'Julius Sans One', sans-serif;
         background-color: #F0F0F0;
         color: #C5C3c6;
     }
 
-    .container {}
+    .dashbored {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
 
     .index-logo {
         display: flex;
@@ -63,7 +64,7 @@
 
     .btn {
         background-color: #DCAE1D;
-        color: black;
+        color: #00303F;
         font-family: 'Julius Sans One', sans-serif;
         font-size: 1.6em;
         /*box-shadow: 5px 5px 10px #46494C;*/
@@ -75,17 +76,17 @@
     .btn:hover {
         background-color: #DCAE1D;
         opacity: .8;
-        color: black;
+        color: #00303F;
     }
 
     .btn-warning:focus {
-        color: black !important;
+        color: #00303F !important;
         background-color: #DCAE1D !important;
         border-color: none !important;
     }
 
     .btn-success {
-        color: black !important;
+        color: #00303F !important;
         background-color: #DCAE1D !important;
         border-color: none !important;
     }
@@ -155,6 +156,12 @@
 
     ul {
         list-style: none;
+        line-height: 2em;
+    }
+
+    small {
+      display: flex;
+      justify-content: center;
     }
     /*.background:after {
         content: "";

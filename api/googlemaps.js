@@ -8,7 +8,6 @@ module.exports = (function() {
       return obj.results.map(function (restaurant){
         return {
           name: restaurant.name,
-          hours: restaurant.opening_hours,
           address: restaurant.vicinity,
           location: restaurant.geometry.location
         }

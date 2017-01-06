@@ -26,7 +26,8 @@ router.post('/login', function(req, res, next) {
           console.log(result);
             if (username == result[0].username && bcrypt.compareSync(password, result[0].password)) {
                 setCookie(res, {dashUsername: username}).then(function() {
-                  res.redirect(`/users/${result[0].id}`);
+                  let id = req.cookies.dashID
+                  res.redirect(`/users/${id}`);
                 }).catch(function(err) {
                   console.log(err);
                   res.redirect('/users/guest');
