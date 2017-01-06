@@ -1,8 +1,9 @@
+
 function validatePassword(password, passwordConfirm) {
   return password === passwordConfirm &&
-          typeof user.password == 'string' &&
-          user.password.trim() != '' &&
-          user.password.trim().length >= 5;
+          typeof password == 'string' &&
+          password.trim() != '' &&
+          password.trim().length >= 5;
 }
 
 function alertError() {
@@ -16,13 +17,20 @@ function clearAlert() {
 }
 
 $('#register-submit').click(function(event) {
-  let password = $('#register-pass').val();
-  let confirmPassword = $('input[name="confirm-password"]').val();
-  let isValid = validatePassword(password, confirmPassword);
-  if(isValid) {
-    clearAlert();
+  event.preventDefault();
+  var passWordValid = validatePassword($(`#registrationForm input[name="password"]`).val(),
+                                       $(`#registrationForm input[name="confirm-password"]`).val());
+  if (passWordValid === false) {
+    alertError()
   } else {
-    event.preventDefault();
-    alertError();
+    $.post('/users', {
+      username: $(`#registrationForm input[name="username"]`).val(),
+      email: $(`#registrationForm input[name="email"]`).val(),
+      password: $(`#registrationForm input[name="password"]`).val()
+    }).then(function(result){
+      $('.error-container').html(
+        `<p class="alert alert-danger">${result.message}</p>`
+      );
+    });
   }
 })

@@ -58,50 +58,49 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-                    <h4 class="modal-title" id="myModalLabel">DASHbored</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="/users" method="post">
-                        <fieldset class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" name="username" class="form-control" placeholder="Username" required>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="password">Password</label>
-                            <input id="register-pass" type="text" name="password" class="form-control" placeholder="Password" required>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="confirm-password">Confirm Password</label>
-                            <input type="text" name="confirm-password" class="form-control" placeholder="Confirm Password" required>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <legend>Preferences</legend>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="news">News</label>
-                                    <input type="checkbox" name="1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="events">Events</label>
-                                    <input type="checkbox" name="4">
-                                </div>
-                                <div class="form-group">
-                                    <label for="places">Places</label>
-                                    <input type="checkbox" name="5">
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="error-container">
-                        </div>
-                        <fieldset>
-                            <button id="register-submit" type="submit" class="btn btn-primary">Submit</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
+            <h4 class="modal-title" id="myModalLabel">DashBored</h4>
+          </div>
+          <div class="modal-body">
+            <form id = 'registrationForm' action="/users" method="post">
+              <fieldset class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="password">Password</label>
+                <input id="register-pass" type="text" name="password" class="form-control" placeholder="Password" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="text" name="confirm-password" class="form-control" placeholder="Confirm Password" required>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend>Preferences</legend>
+                <div class="row">
+                  <div class="form-group">
+                    <label for="news">News</label>
+                    <input type="checkbox" name="1">
+                  </div>
+                  <div class="form-group">
+                    <label for="events">Events</label>
+                    <input type="checkbox" name="4">
+                  </div>
+                  <div class="form-group">
+                    <label for="places">Places</label>
+                    <input type="checkbox" name="5">
+                  </div>
+              </div>
+              </fieldset>
+              <div class="error-container">
+              </div>
+              <fieldset>
+                <button id="register-submit" type="submit" class="btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
+          </div>
         </div>
     </div>
