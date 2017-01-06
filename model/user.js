@@ -24,6 +24,12 @@ module.exports = {
     },
     getUser: function(userID)   {
         return knex('user').select("username").where("id", userID)
+<<<<<<< HEAD
+=======
+    },
+    getUserByUsername: function(username) {
+        return knex('user').first().where('username', username);
+>>>>>>> cookies
     }
 
 

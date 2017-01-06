@@ -7,7 +7,12 @@ const bcrypt = require('bcryptjs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    if (req.cookies.dashId) {
+      let id = req.cookies.dashId;
+      res.redirect(`users/${id}`);
+    } else {
+      res.render('index');
+    }
 });
 
 router.post('/login', function(req, res, next) {
@@ -17,10 +22,13 @@ router.post('/login', function(req, res, next) {
 
     userModel.validSignIn(username, password)
         .then(function(result) {
-          console.log(result);
             if (username == result[0].username && bcrypt.compareSync(password, result[0].password)) {
-                setCookie(res, {dashUser: username});
-                res.redirect('/users/guest')
+                setCookie(res, {dashUsername: username}).then(function() {
+                  res.redirect('/users/guest');
+                }).catch(function(err) {
+                  console.log(err);
+                  res.redirect('/users/guest');
+                });
             } else {
                 res.redirect('/')
             }
