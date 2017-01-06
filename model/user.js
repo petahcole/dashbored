@@ -11,12 +11,15 @@ module.exports = {
             .where('user.username', username)
 
     },
-    validSignUp: function(username) {
-        return knex('user').where('username', username)
+    validSignUp: function(email, username) {
+        return knex('user').where({
+            email: email
+        })
     },
     validSignIn: function(username, password) {
         return knex('user').where({
             username: username,
+            password: password
         })
     },
     createUser: function(userInfo) {

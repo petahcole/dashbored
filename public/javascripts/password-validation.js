@@ -1,6 +1,8 @@
 function validatePassword(password, passwordConfirm) {
-
-  return password === passwordConfirm;
+  return password === passwordConfirm &&
+          typeof user.password == 'string' &&
+          user.password.trim() != '' &&
+          user.password.trim().length >= 5;
 }
 
 function alertError() {
