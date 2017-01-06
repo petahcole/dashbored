@@ -24,10 +24,10 @@ router.get('/guest', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
     if (req.cookies.dashId !== req.params.id) {
       let realId = req.cookies.dashId;
-      res.redirect(`/users/${realId}`);
+      !!realId ? res.redirect(`/users/${realId}`) : res.redirect('/');
     }
     userModel.getUser(req.params.id)
-    .then(username    =>  {
+    .then(username =>  {
        userModel.loadDash(username[0].username)
        .then(results    =>  {
            console.log(results[0])
