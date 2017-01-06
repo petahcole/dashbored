@@ -1,13 +1,12 @@
-<link rel="stylesheet" href="../styles/style.css">
-<div class="container">
-    <div class="background gradient"></div>
-    <header class="top-text">
-        <p id="jumbo-text">Dash<b>Bored<b></p>
-    </header>
+<!-- <link rel="stylesheet" href="../styles/style.css"> -->
+
+    <div class="index-logo mobile-logo">
+        <span id="jumbo-text">DASH<b>bored</b></span>
+    </div>
     <div class="wrap">
         <main>
             <div id="about-id">
-                <p>With DashBored you can have all your news, events, entertainment all in one place!</p>
+                <p>With DASHbored you can have all your news, events, entertainment all in one place!</p>
             </div>
 
             <form class="form-horizontal drop-shadow" action="/login" method="post">
@@ -29,17 +28,16 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
-           <input type="checkbox"> Remember me
-         </label>
+                             <input type="checkbox"> Remember me
+                            </label>
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group index-buttons">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-success" id="sign-in">Sign in</button>
-                        <a type="submit" class="btn btn-info" href="/users/guest">Guest</a>
-                        <button id="register-btn" class="btn btn-success" data-toggle="modal"
-                         data-target="#registerModal">
+                        <a type="submit" class="btn btn-info" href="/users/guest">Continue as Guest</a>
+                        <button id="register-btn" class="btn btn-success" data-toggle="modal" data-target="#registerModal">
                           Sign up
                         </button>
                     </div>
@@ -48,63 +46,62 @@
         </main>
     </div>
     <div class="wrap">
-        <footer>
-            Respected Wizards &copy
+        <footer class="index-footer">
+            Respected Wizards &copy;
         </footer>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">DashBored</h4>
-          </div>
-          <div class="modal-body">
-            <form action="/users" method="post">
-              <fieldset class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Username" required>
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="password">Password</label>
-                <input id="register-pass" type="text" name="password" class="form-control" placeholder="Password" required>
-              </fieldset>
-              <fieldset class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="text" name="confirm-password" class="form-control" placeholder="Confirm Password" required>
-              </fieldset>
-              <fieldset class="form-group">
-                <legend>Preferences</legend>
-                <div class="row">
-                  <div class="form-group">
-                    <label for="news">News</label>
-                    <input type="checkbox" name="1">
-                  </div>
-                  <div class="form-group">
-                    <label for="events">Events</label>
-                    <input type="checkbox" name="4">
-                  </div>
-                  <div class="form-group">
-                    <label for="places">Places</label>
-                    <input type="checkbox" name="5">
-                  </div>
-              </div>
-              </fieldset>
-              <div class="error-container">
-              </div>
-              <fieldset>
-                <button id="register-submit" type="submit" class="btn btn-primary">Submit</button>
-              </fieldset>
-            </form>
-          </div>
+                    <h4 class="modal-title" id="myModalLabel">DASHbored</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/users" method="post">
+                        <fieldset class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Username" required>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="password">Password</label>
+                            <input id="register-pass" type="text" name="password" class="form-control" placeholder="Password" required>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="text" name="confirm-password" class="form-control" placeholder="Confirm Password" required>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <legend>Preferences</legend>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="news">News</label>
+                                    <input type="checkbox" name="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="events">Events</label>
+                                    <input type="checkbox" name="4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="places">Places</label>
+                                    <input type="checkbox" name="5">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="error-container">
+                        </div>
+                        <fieldset>
+                            <button id="register-submit" type="submit" class="btn btn-primary">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-</div>
