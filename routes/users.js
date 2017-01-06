@@ -22,7 +22,10 @@ router.get('/guest', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-    res.send('welcome to your dashbored!!!!');
+    userModel.loadDash(req.body.username)
+    .then(results   =>  {
+        res.send(results)
+    })
 });
 
 router.put('/:id', function(req, res, next) {});
