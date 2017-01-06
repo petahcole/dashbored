@@ -36,7 +36,6 @@
     header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 2em;
     }
 
     #jumbo-text {
@@ -55,6 +54,10 @@
         font-size: 4em;
     }
 
+    #signUpButton {
+        width: 100%;
+    }
+
     .btn-container {
         display: flex;
         justify-content: center;
@@ -70,6 +73,10 @@
         border: none;
         width: 80%;
         margin-top: 2em;
+    }
+
+    .bottom-buttons {
+        width: 40%;
     }
 
     .btn:hover {
@@ -112,7 +119,7 @@
         height: 5em;
     }
 
-    #module {
+    .module {
         background-color: #00303F;
         margin: 1em;
         padding: 1em;
@@ -133,14 +140,29 @@
         justify-content: center;
     }
 
+    .modal-dialog {
+        width: fit contents;
+        height: fit contents;
+    }
+
+    #myGamesModule {
+        width: 50em;
+    }
+
+    #mySportsModule {
+        width: 50em;
+    }
+
     .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100vw;
-        height: 25vh;
+        /*position: absolute;
+        bottom: 0;*/
+        width: 100%;
+        height: fit contents;
         padding: 2em;
         background-color: #00303F;
         color: #DCAE1D;
+        border-radius: .5em;
+        box-shadow: 5px 5px 10px #1E1E24;
     }
 
     a {
@@ -274,9 +296,8 @@
             justify-content: center;
         }
         .footer {
-          display: block;
+            display: block;
             position: baseline;
             bottom: 0;
-
         }
     }
