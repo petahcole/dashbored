@@ -7,8 +7,8 @@
     }
 
     .dashbored {
-      padding-left: 3em;
-      padding-right: 3em;
+        padding-left: 3em;
+        padding-right: 3em;
     }
 
     .index-logo {
@@ -19,12 +19,6 @@
     .logo {
         display: inline-block;
         margin: 0 auto;
-    }
-
-    .menu {
-        display: inline-block;
-        margin-top: 1em;
-        color: #DCAE1D;
     }
 
     .usernName {
@@ -63,6 +57,8 @@
     }
 
     .btn {
+        display: flex;
+        justify-content: center;
         background-color: #DCAE1D;
         color: #00303F;
         font-family: 'Julius Sans One', sans-serif;
@@ -144,11 +140,11 @@
         color: #DCAE1D;
     }
 
-    a {
+    .footer a {
         color: #DCAE1D;
     }
 
-    a:hover {
+    .footer a:hover {
         color: #CAE4DB;
         text-decoration: none;
         cursor: pointer;
@@ -160,8 +156,8 @@
     }
 
     small {
-      display: flex;
-      justify-content: center;
+        display: flex;
+        justify-content: center;
     }
     /*.background:after {
         content: "";
@@ -232,10 +228,6 @@
     }
 
     @media (max-width: 992px) {
-        body {
-            padding-left: 2em;
-            padding-right: 2em;
-        }
         header {
             display: flex;
             margin-bottom: .5em;
@@ -245,6 +237,9 @@
             display: block;
             font-size: .5em;
             margin-right: 1em;
+        }
+        .btn {
+          width: 85%;
         }
         .usernName {
             display: none;
@@ -281,9 +276,8 @@
             justify-content: center;
         }
         .footer {
-          display: block;
+            display: none;
             position: baseline;
             bottom: 0;
-
         }
     }
