@@ -4,6 +4,7 @@
         font-family: 'Julius Sans One', sans-serif;
         background-color: #F0F0F0;
         color: #C5C3c6;
+        padding: 0em 6em 0em 6em;
     }
 
     .dashbored {
@@ -29,8 +30,7 @@
     }
 
     header {
-        display: flex;
-        justify-content: space-between;
+        display:
     }
 
     #jumbo-text {
@@ -45,12 +45,17 @@
         font-family: 'Julius Sans One', sans-serif;
     }
 
+    h1 {
+        font-size: 2.8em !important;
+    }
+
     .glyphicon {
         font-size: 4em;
     }
 
     #signUpButton {
-        width: 100%;
+        width: 10% !important;
+        float: right;
     }
 
     .btn-container {
