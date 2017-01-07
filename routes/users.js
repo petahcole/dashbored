@@ -50,17 +50,23 @@ router.post('/', function(req, res, next) {
 
   var userPrefIds = extractPrefIds(req.body);
 
-     user.createUser(userInfo).then(function(result) {
+     user.createUser(userInfo)
+     .then(function(result) {
        console.log('doing other stuff');
        var userId = result[0];
        userPref.savePreferences(userId, userPrefIds).then(function(data) {
          setCookie(res, {dashId: userId}).then(() => {
-           res.redirect(`/users/${userId}`);
+           res.status(200).json({
+             userId,
+             message: 'User created!'
+           })
          });
        })
-   }).catch(function(err){
+   })
+    .catch(function(err){
      if (err.constraint === "user_username_unique") {
-       res.send({
+       res.status(500).send({
+         status: 'error',
          message: 'User name taken already!'
        })
      } else if (err.constraint == "user_email_unique"){
