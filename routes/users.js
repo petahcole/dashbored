@@ -86,6 +86,8 @@ router.post('/', function(req, res, next) {
 
 })
 
+
+
 function extractPrefIds(obj) {
     var results = [];
     for (var key in obj) {
@@ -102,6 +104,8 @@ function validatePassword(password) {
           password.trim() != '' &&
           password.trim().length >= 5;
 }
+
+
 
 
 module.exports = router;
