@@ -42,12 +42,13 @@ router.post('/:id', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   console.log(req.body);
-  if (!validatePassword(req.body.password)) {
+  if (!validate(req.body.password) || !validate(req.body.username)) {
     res.status(500).json({
       status: 'error',
-      message: 'Invalid password!'
+      message: 'Invalid username or password!'
     })
   } else {
+
     var userInfo = {
            username: req.body.username,
            password: bcrypt.hashSync(req.body.password),
@@ -88,13 +89,16 @@ router.post('/', function(req, res, next) {
 })
 
 function extractPrefIds(arr) {
+    if (!arr || arr.length === 0) {
+      return [];
+    }
     return arr.map(str => Number(str));
 }
 
-function validatePassword(password) {
-  return typeof password == 'string' &&
-          password.trim() != '' &&
-          password.trim().length >= 5;
+function validate(str) {
+  return typeof str == 'string' &&
+          str.trim() != '' &&
+          str.trim().length >= 5;
 }
 
 
