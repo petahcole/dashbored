@@ -5,6 +5,7 @@ var eventful = require("../api/eventful");
 var news = require('../api/news');
 var eventful = require('../api/eventful');
 var maps = require('../api/googlemaps');
+var sports = require('../api/sports');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -43,6 +44,21 @@ router.get('/maps', function(req, res, next) {
             layout: false
         }));
 })
+
+router.get('/sports', function(req, res, next) {
+  console.log("ENDPOINT HIT");
+    sports.getSports({
+            source: 'espn',
+            apiKey: 'a405b1953efe426d900f159c7ac4de98'
+        })
+        .then(body => {
+          console.log(body);
+          res.render("sports", {
+            sportsInfo: body,
+            layout: false
+        })
+      });
+});
 
 
 module.exports = router;

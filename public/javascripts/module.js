@@ -10,4 +10,8 @@ $(document).ready(function() {
     $.get("/templates/maps").then((mapInfos) => {
         $("#map-info").html(mapInfos)
     }).catch(error => console.error);
+
+    $.get("/templates/sports").then((sportsInfo) => {
+        $("#sports-info").html(sportsInfo)
+    }).catch(error => console.error);
 })
