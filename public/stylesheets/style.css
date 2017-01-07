@@ -4,7 +4,6 @@
         font-family: 'Julius Sans One', sans-serif;
         background-color: #F0F0F0;
         color: #C5C3c6;
-
     }
 
     .dashbored {
@@ -54,6 +53,11 @@
     }
 
     #signUpButton {
+        width: 10% !important;
+        float: right;
+    }
+
+    #logOutButton {
         width: 10% !important;
         float: right;
     }
@@ -156,18 +160,17 @@
     }
 
     .footer {
-        /*position: absolute;*/
-        bottom: 0;
-        width: 100vw;
-        height: fit contents;
-        margin-top: 2em;
-        padding: 1em;
-        background-color: #00303F;
-        color: #DCAE1D;
+      width: 100vw;
+      padding: 2em;
+      display: flex;
+      text-align: center; 
+      justify-content: center;
+      align-items: center;
+      font-family: 'Julius Sans One', sans-serif;
     }
 
     .footer a {
-        color: #DCAE1D;
+        color: #F0F0F0;
     }
 
     .footer a:hover {

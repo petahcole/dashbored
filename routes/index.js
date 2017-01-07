@@ -38,6 +38,11 @@ router.post('/login', function(req, res, next) {
         })
 });
 
+router.get('/logout', function(req, res, next) {
+    res.clearCookie('dashId')
+    res.redirect('/')
+    console.log('working');
+})
 
 
 module.exports = router;
