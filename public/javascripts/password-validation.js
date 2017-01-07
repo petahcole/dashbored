@@ -39,14 +39,9 @@ $('#register-submit').click(function(event) {
       prefIds: captureRegCheckboxes()
     })
     .then(function(result){
-      console.log(result);
-      if (result.status === 'error') {
-
-      } else {
         let id = result.userId;
         console.log(`/users/${id}`);
         window.location = `/users/${id}`;
-      }
     }).catch(function(error) {
       $('.error-container').html(
         `<p class="alert alert-danger">${error.responseJSON.message}</p>`

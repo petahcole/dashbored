@@ -42,13 +42,6 @@ router.post('/:id', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   console.log(req.body);
-  if (!validate(req.body.password) || !validate(req.body.username)) {
-    res.status(500).json({
-      status: 'error',
-      message: 'Invalid username or password!'
-    })
-  } else {
-
     var userInfo = {
            username: req.body.username,
            password: bcrypt.hashSync(req.body.password),
@@ -71,20 +64,22 @@ router.post('/', function(req, res, next) {
          })
      })
       .catch(function(err){
+        console.log("SOMETHING");
        if (err.constraint === "user_username_unique") {
          res.status(500).send({
-           status: 'error',
            message: 'User name taken already!'
          })
        } else if (err.constraint == "user_email_unique"){
-         res.send({
+         res.status(500).send({
            message: 'Email already taken!'
          })
        } else {
-         console.log(err);
+         res.status(500).send({
+           message: err.constraint
+         })
        }
      })
-  }
+
 
 })
 
