@@ -41,7 +41,7 @@ router.post('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  if (!validatePassword(req.password)) {
+  if (!validatePassword(req.body.password)) {
     res.status(500).json({
       status: 'error',
       message: 'Invalid password!'
@@ -98,6 +98,7 @@ function extractPrefIds(obj) {
 }
 
 function validatePassword(password) {
+  console.log(password);
   return typeof password == 'string' &&
           password.trim() != '' &&
           password.trim().length >= 5;
