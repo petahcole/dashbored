@@ -41,12 +41,7 @@ router.post('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  if (!validatePassword(req.password)) {
-    res.status(500).json({
-      status: 'error',
-      message: 'Invalid password!'
-    })
-  } else {
+  console.log(req.body);
     var userInfo = {
            username: req.body.username,
            password: bcrypt.hashSync(req.body.password),
@@ -54,7 +49,7 @@ router.post('/', function(req, res, next) {
            joined: new Date()
     }
 
-    var userPrefIds = extractPrefIds(req.body);
+    var userPrefIds = extractPrefIds(req.body.prefIds);
 
        user.createUser(userInfo)
        .then(function(result) {
@@ -69,40 +64,34 @@ router.post('/', function(req, res, next) {
          })
      })
       .catch(function(err){
+        console.log("SOMETHING");
        if (err.constraint === "user_username_unique") {
          res.status(500).send({
-           status: 'error',
            message: 'User name taken already!'
          })
        } else if (err.constraint == "user_email_unique"){
-         res.send({
+         res.status(500).send({
            message: 'Email already taken!'
          })
        } else {
-         console.log(err);
+         res.status(500).send({
+           message: err.constraint
+         })
        }
      })
-  }
-
-})
 
 
-
-function extractPrefIds(obj) {
-    var results = [];
-    for (var key in obj) {
-        if (!isNaN(key)) {
-            results.push(Number(key));
-
-        }
+function extractPrefIds(arr) {
+    if (!arr || arr.length === 0) {
+      return [];
     }
-    return results;
+    return arr.map(str => Number(str));
 }
 
-function validatePassword(password) {
-  return typeof password == 'string' &&
-          password.trim() != '' &&
-          password.trim().length >= 5;
+function validate(str) {
+  return typeof str == 'string' &&
+          str.trim() != '' &&
+          str.trim().length >= 5;
 }
 
 

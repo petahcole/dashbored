@@ -22,7 +22,18 @@ module.exports = {
         })
     },
     createUser: function(userInfo) {
-        return knex('user').returning('id').insert(userInfo)
+        if (userInfo.username.length < 3) {
+          return Promise.reject({
+            constraint: 'Username not long enough'
+          });
+        } else if (userInfo.email.length < 3) {
+          return Promise.reject({
+            constraint: 'Email not long enough'
+          });
+        } else {
+          return knex('user').returning('id').insert(userInfo)
+        }
+
     },
     getUser: function(userID)   {
         return knex('user').select("username").where("id", userID)

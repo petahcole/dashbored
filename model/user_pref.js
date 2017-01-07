@@ -4,6 +4,10 @@ module.exports = {
 
     savePreferences: function(user_id, pref_ids) {
 
+      if (!pref_ids || pref_ids.length === 0) {
+        return Promise.resolve(false);
+      }
+
         return Promise.all(pref_ids.map(function(pref_id) {
             return knex('user_preference').insert({
                 name: 'Whatever',

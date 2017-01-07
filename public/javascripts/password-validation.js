@@ -16,6 +16,15 @@ function clearAlert() {
   $('.error-container').html('');
 }
 
+function captureRegCheckboxes() {
+  var data = [];
+  $("#registrationForm :checked").each(function() {
+    data.push($(this).val());
+  });
+  return data;
+}
+
+
 $('#register-submit').click(function(event) {
   event.preventDefault();
   var passWordValid = validatePassword($(`#registrationForm input[name="password"]`).val(),
@@ -26,17 +35,13 @@ $('#register-submit').click(function(event) {
     $.post('/users', {
       username: $(`#registrationForm input[name="username"]`).val(),
       email: $(`#registrationForm input[name="email"]`).val(),
-      password: $(`#registrationForm input[name="password"]`).val()
+      password: $(`#registrationForm input[name="password"]`).val(),
+      prefIds: captureRegCheckboxes()
     })
     .then(function(result){
-      console.log(result);
-      if (result.status === 'error') {
-
-      } else {
         let id = result.userId;
         console.log(`/users/${id}`);
         window.location = `/users/${id}`;
-      }
     }).catch(function(error) {
       $('.error-container').html(
         `<p class="alert alert-danger">${error.responseJSON.message}</p>`
