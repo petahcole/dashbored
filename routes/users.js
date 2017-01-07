@@ -41,42 +41,49 @@ router.post('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  var userInfo = {
-         username: req.body.username,
-         password: bcrypt.hashSync(req.body.password),
-         email: req.body.email,
-         joined: new Date()
+  if (!validatePassword(req.body.password)) {
+    res.status(500).json({
+      status: 'error',
+      message: 'Invalid password!'
+    })
+  } else {
+    var userInfo = {
+           username: req.body.username,
+           password: bcrypt.hashSync(req.body.password),
+           email: req.body.email,
+           joined: new Date()
+    }
+
+    var userPrefIds = extractPrefIds(req.body);
+
+       user.createUser(userInfo)
+       .then(function(result) {
+         var userId = result[0];
+         userPref.savePreferences(userId, userPrefIds).then(function(data) {
+           setCookie(res, {dashId: userId}).then(() => {
+             res.status(200).json({
+               userId,
+               message: 'User created!'
+             })
+           });
+         })
+     })
+      .catch(function(err){
+       if (err.constraint === "user_username_unique") {
+         res.status(500).send({
+           status: 'error',
+           message: 'User name taken already!'
+         })
+       } else if (err.constraint == "user_email_unique"){
+         res.send({
+           message: 'Email already taken!'
+         })
+       } else {
+         console.log(err);
+       }
+     })
   }
 
-  var userPrefIds = extractPrefIds(req.body);
-
-     user.createUser(userInfo)
-     .then(function(result) {
-       console.log('doing other stuff');
-       var userId = result[0];
-       userPref.savePreferences(userId, userPrefIds).then(function(data) {
-         setCookie(res, {dashId: userId}).then(() => {
-           res.status(200).json({
-             userId,
-             message: 'User created!'
-           })
-         });
-       })
-   })
-    .catch(function(err){
-     if (err.constraint === "user_username_unique") {
-       res.status(500).send({
-         status: 'error',
-         message: 'User name taken already!'
-       })
-     } else if (err.constraint == "user_email_unique"){
-       res.send({
-         message: 'Email already taken!'
-       })
-     } else {
-       console.log(err);
-     }
-   })
 })
 
 function extractPrefIds(obj) {
@@ -88,6 +95,13 @@ function extractPrefIds(obj) {
         }
     }
     return results;
+}
+
+function validatePassword(password) {
+  console.log(password);
+  return typeof password == 'string' &&
+          password.trim() != '' &&
+          password.trim().length >= 5;
 }
 
 
