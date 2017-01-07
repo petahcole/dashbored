@@ -1,14 +1,15 @@
     /*HBS*/
 
     body {
-        padding-left: 3em;
-        padding-right: 3em;
         font-family: 'Julius Sans One', sans-serif;
         background-color: #F0F0F0;
         color: #C5C3c6;
     }
 
-    .container {}
+    .dashbored {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
 
     .index-logo {
         display: flex;
@@ -18,12 +19,6 @@
     .logo {
         display: inline-block;
         margin: 0 auto;
-    }
-
-    .menu {
-        display: inline-block;
-        margin-top: 1em;
-        color: #DCAE1D;
     }
 
     .usernName {
@@ -65,8 +60,10 @@
     }
 
     .btn {
+        display: flex;
+        justify-content: center;
         background-color: #DCAE1D;
-        color: black;
+        color: #00303F;
         font-family: 'Julius Sans One', sans-serif;
         font-size: 1.6em;
         /*box-shadow: 5px 5px 10px #46494C;*/
@@ -82,17 +79,17 @@
     .btn:hover {
         background-color: #DCAE1D;
         opacity: .8;
-        color: black;
+        color: #00303F;
     }
 
     .btn-warning:focus {
-        color: black !important;
+        color: #00303F !important;
         background-color: #DCAE1D !important;
         border-color: none !important;
     }
 
     .btn-success {
-        color: black !important;
+        color: #00303F !important;
         background-color: #DCAE1D !important;
         border-color: none !important;
     }
@@ -165,11 +162,11 @@
         box-shadow: 5px 5px 10px #1E1E24;
     }
 
-    a {
+    .footer a {
         color: #DCAE1D;
     }
 
-    a:hover {
+    .footer a:hover {
         color: #CAE4DB;
         text-decoration: none;
         cursor: pointer;
@@ -177,6 +174,12 @@
 
     ul {
         list-style: none;
+        line-height: 2em;
+    }
+
+    small {
+        display: flex;
+        justify-content: center;
     }
     /*.background:after {
         content: "";
@@ -247,10 +250,6 @@
     }
 
     @media (max-width: 992px) {
-        body {
-            padding-left: 2em;
-            padding-right: 2em;
-        }
         header {
             display: flex;
             margin-bottom: .5em;
@@ -260,6 +259,9 @@
             display: block;
             font-size: .5em;
             margin-right: 1em;
+        }
+        .btn {
+            width: 85%;
         }
         .usernName {
             display: none;
@@ -297,6 +299,7 @@
         }
         .footer {
             display: block;
+            display: none;
             position: baseline;
             bottom: 0;
         }

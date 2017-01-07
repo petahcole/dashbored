@@ -27,7 +27,8 @@ $('#register-submit').click(function(event) {
       username: $(`#registrationForm input[name="username"]`).val(),
       email: $(`#registrationForm input[name="email"]`).val(),
       password: $(`#registrationForm input[name="password"]`).val()
-    }).then(function(result){
+    })
+    .then(function(result){
       $('.error-container').html(
         `<p class="alert alert-danger">${result.message}</p>`
       );

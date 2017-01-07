@@ -30,13 +30,15 @@ router.get('/:id', function(req, res, next) {
     .then(username =>  {
        userModel.loadDash(username[0].username)
        .then(results    =>  {
-           console.log(results[0])
-           res.render("user", {userInfo: results[0]})
+           console.log(results)
+           res.render("user", {userInfo: results})
        })
     })
 });
 
-router.put('/:id', function(req, res, next) {});
+router.post('/:id', function(req, res, next) {
+    console.log(req.body)
+});
 
 router.post('/', function(req, res, next) {
   var userInfo = {
@@ -44,15 +46,18 @@ router.post('/', function(req, res, next) {
          password: bcrypt.hashSync(req.body.password),
          email: req.body.email,
          joined: new Date()
-     }
-  console.log("hit me");
+  }
+
+  var userPrefIds = extractPrefIds(req.body);
+
      user.createUser(userInfo).then(function(result) {
-     var userId = result[0];
-     userPref.savePreferences(userId, userPrefIds).then(function(data) {
-       setCookie(res, {dashId: userId}).then(() => {
-         res.redirect(`/users/${userId}`);
-       });
-     })
+       console.log('doing other stuff');
+       var userId = result[0];
+       userPref.savePreferences(userId, userPrefIds).then(function(data) {
+         setCookie(res, {dashId: userId}).then(() => {
+           res.redirect(`/users/${userId}`);
+         });
+       })
    }).catch(function(err){
      if (err.constraint === "user_username_unique") {
        res.send({
@@ -62,10 +67,11 @@ router.post('/', function(req, res, next) {
        res.send({
          message: 'Email already taken!'
        })
+     } else {
+       console.log(err);
      }
    })
 })
-
 
 function extractPrefIds(obj) {
     var results = [];
