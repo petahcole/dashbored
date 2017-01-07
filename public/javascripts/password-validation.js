@@ -29,9 +29,16 @@ $('#register-submit').click(function(event) {
       password: $(`#registrationForm input[name="password"]`).val()
     })
     .then(function(result){
-      $('.error-container').html(
-        `<p class="alert alert-danger">${result.message}</p>`
-      );
+      console.log(result);
+      if (result.error) {
+        $('.error-container').html(
+          `<p class="alert alert-danger">${result.message}</p>`
+        );
+      } else {
+        let id = result.userId;
+        console.log(`/users/${id}`);
+        window.location = `/users/${id}`;
+      }
     });
   }
 })
