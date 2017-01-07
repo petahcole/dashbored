@@ -41,6 +41,7 @@ router.post('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+  console.log(req.body);
   if (!validatePassword(req.body.password)) {
     res.status(500).json({
       status: 'error',
@@ -54,7 +55,7 @@ router.post('/', function(req, res, next) {
            joined: new Date()
     }
 
-    var userPrefIds = extractPrefIds(req.body);
+    var userPrefIds = extractPrefIds(req.body.prefIds);
 
        user.createUser(userInfo)
        .then(function(result) {
@@ -86,19 +87,11 @@ router.post('/', function(req, res, next) {
 
 })
 
-function extractPrefIds(obj) {
-    var results = [];
-    for (var key in obj) {
-        if (!isNaN(key)) {
-            results.push(Number(key));
-
-        }
-    }
-    return results;
+function extractPrefIds(arr) {
+    return arr.map(str => Number(str));
 }
 
 function validatePassword(password) {
-  console.log(password);
   return typeof password == 'string' &&
           password.trim() != '' &&
           password.trim().length >= 5;
