@@ -191,7 +191,7 @@
 
             <!-- GAMES MODULE -->
 
-            <div id="myGamesModule" class="jumbotron col-s-8 module" data-prefID="2">
+            <div id="myGamesModule" class="jumbotron col-s-8 module" data-prefID="3">
                 <nav>
                     <h1>GAMES</h1>
                     <img src="https://openclipart.org/image/2400px/svg_to_png/227918/Video-Game-Controller-Icon.png" class="modules-logo">
@@ -244,7 +244,7 @@
 
             <!-- SPORTS MODULE -->
 
-            <div id="mySportsModule" class="jumbotron col-s-2 module" data-prefID="3">
+            <div id="mySportsModule" class="jumbotron col-s-2 module" data-prefID="2">
                 <nav>
                     <h1>SPORTS</h1>
                     <img src="http://maxpixel.freegreatpicture.com/static/photo/640/Competition-Team-Game-Ball-Soccer-Sport-Kick-34898.png" class="modules-logo">
@@ -292,7 +292,7 @@
 
 <script>
     var preferences = {
-            {{#each userInfo}} 
+            {{#each userInfo}}
             {{@index}}: {{pref_type_id}},
             {{/each}}
             }
