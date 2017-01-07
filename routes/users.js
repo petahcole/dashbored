@@ -59,10 +59,6 @@ router.post('/', function(req, res, next) {
 
        user.createUser(userInfo)
        .then(function(result) {
-         console.log(userInfo);
-         console.log(result);
-         console.log(userPrefIds);
-         console.log(req.body)
          var userId = result[0];
          userPref.savePreferences(userId, userPrefIds).then(function(data) {
            setCookie(res, {dashId: userId}).then(() => {

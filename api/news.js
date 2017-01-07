@@ -15,7 +15,6 @@ module.exports = (function() {
 
   const getNews = function(queryObj) {
     let url = makeUrl(ENDPOINT, queryObj);
-    console.log(url);
     return new Promise(function (resolve, reject) {
       request(url, function(err, res, body) {
         if (!err) {
