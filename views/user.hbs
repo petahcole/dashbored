@@ -1,12 +1,24 @@
 <div class="dashbored">
     <header>
+      <nav>
+        <div class="logo mobile-logo">
+            <span id="jumbo-text">DASH<b>bored</b></span>
+        </div>
+
+        <button id="edit-btn" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#registerModal">
+        Edit Preferences
+        </button>
+
+        <a href="/logout" type="button" class="btn btn-warning btn-lg" data-target="" id="logOutButton">Log Out</a>
+      </nav>
+
         <div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+                          <span aria-hidden="true">&times;</span>
+                        </button>
 
                         <h4 class="modal-title" id="myModalLabel">DashBored</h4>
                     </div>
@@ -43,16 +55,17 @@
                 </div>
             </div>
         </div>
-
-        <div class="logo">
+<!--
+        <div class="logo mobile-logo">
             <span id="jumbo-text">DASH<b>bored</b></span>
         </div>
-<!-- ***********STYLE THESE BUTTONS TO THE TOP RIGHT PLEASE************** -->
+
         <button id="edit-btn" class="btn btn-success" data-toggle="modal" data-target="#registerModal">
           Edit Preferences
         </button>
-        <a href="/logout" type="button" class="btn btn-warning btn-lg" data-target="" id="logOutButton">Log Out</a>
-<!-- ***********STYLE THESE BUTTONS TO THE TOP RIGHT PLEASE************** -->
+
+        <a href="/logout" type="button" class="btn btn-warning btn-lg" data-target="" id="logOutButton">Log Out</a> -->
+
     </header>
 
     <main>
@@ -280,7 +293,7 @@
             </div>
         </div>
     </main>
-  </div>
+</div>
 </div>
 
 <!-- *****EDIT PREFERENCES BUTTON/MODAL OPTION********* -->
@@ -288,71 +301,84 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">DashBored</h4>
-      </div>
-      <div class="modal-body">
-        <form id = 'preferenceForm' action="/users" method="post">
-          <fieldset class="form-group">
-            <legend>Preferences</legend>
-            <div class="row">
-              <div class="form-group">
-                <label for="news">News</label>
-                <input id="1" type="checkbox" name="1" value="1">
-              </div>
-              <div class="form-group">
-                <label for="events">Events</label>
-                <input id="4" type="checkbox" name="4" value="4">
-              </div>
-              <div class="form-group">
-                <label for="places">Places</label>
-                <input id="5" type="checkbox" name="5" value="5">
-              </div>
-              <div class="form-group">
-                <label for="places">Games</label>
-                <input id="3" type="checkbox" name="3" value="3">
-              </div>
-              <div class="form-group">
-                <label for="places">Sports</label>
-                <input id="2" type="checkbox" name="2" value="2">
-              </div>
-          </div>
-          </fieldset>
-          <fieldset>
-            <button id="preference-editing" type="submit" class="btn btn-primary">Change preferences!</button>
-          </fieldset>
-        </form>
-      </div>
+                <h4 class="modal-title" id="myModalLabel">DashBored</h4>
+            </div>
+            <div class="modal-body">
+                <form id='preferenceForm' action="/users" method="post">
+                    <fieldset class="form-group">
+                        <legend>Preferences</legend>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="news">News</label>
+                                <input id="1" type="checkbox" name="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="events">Events</label>
+                                <input id="4" type="checkbox" name="4" value="4">
+                            </div>
+                            <div class="form-group">
+                                <label for="places">Places</label>
+                                <input id="5" type="checkbox" name="5" value="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="places">Games</label>
+                                <input id="3" type="checkbox" name="3" value="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="places">Sports</label>
+                                <input id="2" type="checkbox" name="2" value="2">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <button id="preference-editing" type="submit" class="btn btn-primary">Change preferences!</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-<!--*************************************-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <!--*************************************-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 
-<script>
-    var preferences = {
-            {{#each userInfo}}
-            {{@index}}: {{pref_type_id}},
-            {{/each}}
-            }
+    <script>
+        var preferences = {
+                {
+                    {#
+                        each userInfo
+                    }
+                } {
+                    {
+                        @index
+                    }
+                }: {
+                    {
+                        pref_type_id
+                    }
+                },
+                {
+                    {
+                        /each}}
+                    }
 
- var prefArr = []
- for (key in preferences) {
- prefArr.push(preferences[key])
-}
+                    var prefArr = []
+                    for (key in preferences) {
+                        prefArr.push(preferences[key])
+                    }
 
-$('*[data-prefID="1"]').hide();
-$('*[data-prefID="2"]').hide();
-$('*[data-prefID="3"]').hide();
-$('*[data-prefID="4"]').hide();
-$('*[data-prefID="5"]').hide();
+                    $('*[data-prefID="1"]').hide();
+                    $('*[data-prefID="2"]').hide();
+                    $('*[data-prefID="3"]').hide();
+                    $('*[data-prefID="4"]').hide();
+                    $('*[data-prefID="5"]').hide();
 
-for (var i = 0; i < prefArr.length; i++) {
-    $(`*[data-prefID="${prefArr[i]}"`).toggle()
-    $(`#${prefArr[i]}`).attr('checked', true)
-}
+                    for (var i = 0; i < prefArr.length; i++) {
+                        $(`*[data-prefID="${prefArr[i]}"`).toggle()
+                        $(`#${prefArr[i]}`).attr('checked', true)
+                    }
 
-// if prefArr has a value > add the 'checked' value to (input type='checkbox') fields
- // takes entire page and checks box for us
-</script>
+                    // if prefArr has a value > add the 'checked' value to (input type='checkbox') fields
+                    // takes entire page and checks box for us
+    </script>
