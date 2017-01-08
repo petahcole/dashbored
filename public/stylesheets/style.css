@@ -41,7 +41,7 @@ header {
 }
 
 #guest-btn {
-    width: 28%;
+    width: 40%;
     font-size: 1.3em;
 }
 
@@ -105,7 +105,7 @@ h1 {
 #signUpButton {
     width: 10% !important;
     float: right;
-    box-shadow: 5px 5px 10px #46494C;
+    box-shadow: 2px 2px 10px #1E1E24;
 }
 
 .btn-container {
@@ -476,7 +476,12 @@ h3 {
     .btn {
         width: 35%;
         font-size: 1.2em;
-        margin: .5em;
+        margin: .4em;
+        padding: 6px 10px;
+    }
+    #logOutButton {
+      display: flex;
+      flex-wrap: wrap;
     }
     #sign-in {
         font-size: 1.1em;
@@ -491,7 +496,8 @@ h3 {
     #signUpButton {
         font-size: 1em;
         width: 70% !important;
-        margin-top: 2em;
+        margin-top: 1em;
+        float: none;
     }
     .usernName {
         display: none;
@@ -545,6 +551,7 @@ h3 {
     .dashbored {
         padding-left: 3em;
         padding-right: 3em;
+        margin: 0;
     }
     main {
         display: flex;
@@ -560,27 +567,28 @@ h3 {
     }
     .mobile-logo {
         display: block;
-        font-size: .3em;
+        font-size: .5em;
+        margin-left: 3em;
         /*margin-right: 1em;*/
     }
     #myNewsModule {
-        width: 70vw;
+        width: 90vw;
     }
     #myEventsModule {
-        width: 70vw;
+        width: 90vw;
     }
     #myMapsModule {
-        width: 70vw;
+        width: 90vw;
     }
     #myGamesModule {
-        width: 70vw;
+        width: 90vw;
     }
     #mySportsModule {
-        width: 70vw;
+        width: 90vw;
     }
     .btn {
-        width: 50%;
-        font-size: 1em;
-        margin: .5em;
+        width: 75%;
+        font-size: 1.5em;
+        margin-top: 2em;
     }
 }
