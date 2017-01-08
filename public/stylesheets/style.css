@@ -439,6 +439,10 @@ h3 {
     z-index: 3;
 }
 
+#register-button-container  {
+  margin-left: 10%;
+}
+
 @media (max-width: 992px) {
     .dashbored {
         padding-left: 3em;
@@ -522,6 +526,9 @@ h3 {
         position: baseline;
         bottom: 0;
     }
+    #register-button-container  {
+      margin-left: 33%;
+    }
 }
 
 @media (max-width: 425px) {
@@ -566,4 +573,26 @@ h3 {
         font-size: 1em;
         margin: .5em;
     }
+    #register-button-container  {
+      margin-left: 33%;
+    }
+}
+
+.checkbox-fieldset > div.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.checkbox-fieldset  .form-group {
+  margin: 0;
+  margin-right: 2rem;
+}
+
+#register-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
