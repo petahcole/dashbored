@@ -16,9 +16,9 @@ function clearAlert() {
   $('.error-container').html('');
 }
 
-function captureRegCheckboxes() {
+function captureCheckboxes(formID) {
   var data = [];
-  $("#registrationForm :checked").each(function() {
+  $(`#${formID} :checked`).each(function() {
     data.push($(this).val());
   });
   return data;
@@ -36,11 +36,11 @@ $('#register-submit').click(function(event) {
       username: $(`#registrationForm input[name="username"]`).val(),
       email: $(`#registrationForm input[name="email"]`).val(),
       password: $(`#registrationForm input[name="password"]`).val(),
-      prefIds: captureRegCheckboxes()
+      prefIds: captureCheckboxes('registrationForm')
     })
     .then(function(result){
+        window.dashUserId = result.userId
         let id = result.userId;
-        console.log(`/users/${id}`);
         window.location = `/users/${id}`;
     }).catch(function(error) {
       $('.error-container').html(
@@ -49,3 +49,28 @@ $('#register-submit').click(function(event) {
     });
   }
 })
+
+$('#preference-editing').click(function(event)  {
+  var id = extractIdCookie()
+  event.preventDefault();
+  // let id = $.cookie('dashId')
+  $.ajax({
+      url: `/users/${id}`,
+      type: 'PUT',
+      data: {
+            prefIds: captureCheckboxes('preferenceForm')
+      }
+  })
+  .then(function(result){
+    var id = extractIdCookie()
+    window.location = `/users/${id}`;
+  })
+})
+
+
+function extractIdCookie (){
+  var regex = /dashId=[1-9]+/;
+  var isolated = document.cookie.match(regex)[0];
+  var result = isolated.replace('dashId=', '')
+  return Number(result)
+}
