@@ -50,6 +50,20 @@ header {
     font-size: 1.3em;
 }
 
+#edit-btn {
+    width: 16% !important;
+    font-size: 1.3em;
+    margin: 0em 0em 0em 0em;
+    /*display: inline: block;*/
+}
+
+#logOutButton {
+    width: 16% !important;
+    font-size: 1.3em;
+    margin: 0em 0em 0em 2em;
+    /*display: inline: block;*/
+}
+
 .logo {
     display: inline-block;
     margin: 0 auto;
@@ -71,6 +85,15 @@ header {
     margin-bottom: 0px;
 }
 
+#jumbo-text-user {
+    font-size: 7em;
+    /*color: #177E89;*/
+    color: #EE2E31;
+    font-family: 'Poiret One', cursive;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 b {
     font-family: 'Julius Sans One', sans-serif;
 }
@@ -83,12 +106,6 @@ h1 {
     width: 10% !important;
     float: right;
     box-shadow: 5px 5px 10px #46494C;
-}
-
-#logOutButton {
-    width: 10% !important;
-    float: right;
-    margin-top: 3em !important
 }
 
 .btn-container {
@@ -139,7 +156,7 @@ p {
 .info-squares {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 0px;
 }
 
