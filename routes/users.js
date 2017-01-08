@@ -9,7 +9,15 @@ var bcrypt = require('bcryptjs')
 var userPref = require('../model/user_pref')
 var setCookie = require('../helpers/set-cookie');
 
-
+router.put('/:id', function(req, res, next)  {
+  let userId = req.params.id
+    var userPrefIds = extractPrefIds(req.body.prefIds);
+    userPref.savePreferences(userId, userPrefIds).then(function(result){
+      res.json({
+        message: "Preferences saved"
+      })
+    })
+})
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     userModel.loadDash(req.body.username).then(function(result) {
@@ -30,7 +38,6 @@ router.get('/:id', function(req, res, next) {
         .then(username => {
             userModel.loadDash(username[0].username)
                 .then(results => {
-                    console.log(results);
                     res.render("user", {
                         userInfo: results
                     })
