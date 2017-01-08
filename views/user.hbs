@@ -6,7 +6,7 @@
         </div>
 
         <button id="edit-btn" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#registerModal">
-        Edit Preferences
+        Settings
         </button>
 
         <a href="/logout" type="button" class="btn btn-warning btn-lg" data-target="" id="logOutButton">Log Out</a>
@@ -162,13 +162,13 @@
             <div id="myMapsModule" class="jumbotron col-s-4 module" data-prefID="5">
 
                 <nav>
-                    <h1>PLACES</h1>
+                    <h1>Food&nbsp;</h1>
                     <img src="http://findicons.com/files/icons/98/nx11/256/internet_real.png" class="modules-logo">
                 </nav>
 
                 <div class="btn-container">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#mapsModal">What's Around Me?</button>
+                    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#mapsModal">Explore</button>
                 </div>
 
             </div>
@@ -183,7 +183,7 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <nav class="modal-title" id="mapsModalLabel">
-                                <h2>Places</h2><img src="http://findicons.com/files/icons/98/nx11/256/internet_real.png" class="modules-logo">
+                                <h2>Food</h2><img src="http://findicons.com/files/icons/98/nx11/256/internet_real.png" class="modules-logo">
                             </nav>
                         </div>
 
@@ -344,24 +344,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 
     <script>
-        var preferences = {
-                {
-                    {#
-                        each userInfo
-                    }
-                } {
-                    {
-                        @index
-                    }
-                }: {
-                    {
-                        pref_type_id
-                    }
-                },
-                {
-                    {
-                        /each}}
-                    }
+    var preferences = {
+                   {{#each userInfo}}
+                   {{@index}}: {{pref_type_id}},
+                   {{/each}}
+           }
 
                     var prefArr = []
                     for (key in preferences) {
