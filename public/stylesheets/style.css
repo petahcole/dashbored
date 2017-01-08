@@ -548,6 +548,18 @@ h3 {
 }
 
 @media (max-width: 425px) {
+  .blockMe{
+    display: block;
+    text-align: center;
+  }
+  #logOutButton{
+    display: inline-block;
+    width: 27% !important;
+  }
+  #edit-btn{
+    display: inline-block;
+    width: 27% !important;
+  }
     .dashbored {
         padding-left: 3em;
         padding-right: 3em;
