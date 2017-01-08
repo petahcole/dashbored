@@ -1,8 +1,11 @@
     /*HBS*/
 
     body {
-        font-family: 'Julius Sans One', sans-serif;
-        background-color: #F0F0F0;
+        /*font-family: 'Julius Sans One', sans-serif;*/
+        font-family: 'Raleway', sans-serif;
+        /*background-color: #F0F0F0;*/
+        background-image: url("https://camo.githubusercontent.com/77d51bed58191a49e5900e72fa45d8ab010b41c4/687474703a2f2f692e696d6775722e636f6d2f494d524c6c39442e706e67");
+        background-size: cover;
         color: #C5C3c6;
     }
 
@@ -14,6 +17,26 @@
     .index-logo {
         display: flex;
         justify-content: center;
+    }
+
+    .index-button-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #sign-in {
+        width: 22%;
+        font-size: 1.3em;
+    }
+
+    #guest-btn {
+        width: 28%;
+        font-size: 1.3em;
+    }
+
+    #register-btn {
+        width: 22%;
+        font-size: 1.3em;
     }
 
     .logo {
@@ -33,8 +56,9 @@
     }
 
     #jumbo-text {
-        font-size: 9em;
-        color: #129490;
+        font-size: 10em;
+        /*color: #177E89;*/
+        color: #EE2E31;
         font-family: 'Poiret One', cursive;
         margin-top: 0;
         /*text-shadow: 5px 5px 10px #1E1E24;*/
@@ -48,18 +72,16 @@
         font-size: 2.8em !important;
     }
 
-    .glyphicon {
-        font-size: 4em;
-    }
-
     #signUpButton {
         width: 10% !important;
         float: right;
+        box-shadow: 5px 5px 10px #46494C;
     }
 
     #logOutButton {
         width: 10% !important;
         float: right;
+        margin-top: 3em !important
     }
 
     .btn-container {
@@ -73,12 +95,20 @@
         justify-content: center;
         background-color: #DCAE1D;
         color: #00303F;
-        font-family: 'Julius Sans One', sans-serif;
+        /*font-family: 'Julius Sans One', sans-serif;*/
+        font-family: 'Raleway', sans-serif !important;
         font-size: 1.6em;
-        /*box-shadow: 5px 5px 10px #46494C;*/
         border: none;
         width: 80%;
         margin-top: 2em;
+    }
+
+    p {
+        font-family: 'Raleway', sans-serif;
+    }
+
+    input {
+        width: 50%;
     }
 
     .bottom-buttons {
@@ -161,16 +191,19 @@
 
     .footer {
         width: 100vw;
-        padding: 2em;
+        /*padding: 2em;*/
         display: flex;
         text-align: center;
         justify-content: center;
         align-items: center;
-        font-family: 'Julius Sans One', sans-serif;
+        /*font-family: 'Julius Sans One', sans-serif;*/
+        font-family: 'Raleway', sans-serif;
+        /*color: #91979E;*/
+        color: #4C5C68;
     }
 
     .footer a {
-        color: #F0F0F0;
+        /*color: #F0F0F0;*/
     }
 
     .footer a:hover {
@@ -214,12 +247,12 @@
         text-align: center;
         font-size: 1.4em;
         border-radius: 1em;
-        font-family: 'Julius Sans One', sans-serif;
+        /*font-family: 'Julius Sans One', sans-serif;*/
         box-shadow: 5px 5px 10px #1E1E24;
     }
 
     .wrap {
-        width: 60%;
+        width: 45%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -229,12 +262,17 @@
 
     .form-horizontal {
         background-color: #00303F;
-        padding: .2em 1em 1em 1em;
+        padding: .2em 2em 2em 2em;
         margin-top: 2em;
         margin-bottom: 1em;
         border-radius: 1em;
-        font-family: 'Julius Sans One', sans-serif;
+        /*font-family: 'Julius Sans One', sans-serif;*/
+        font-family: 'Raleway', sans-serif !important;
         box-shadow: 5px 5px 10px #1E1E24;
+    }
+
+    h3 {
+        font-family: 'Raleway', sans-serif !important;
     }
 
     .form-group {
@@ -255,6 +293,142 @@
         align-items: center;
         font-family: 'Julius Sans One', sans-serif;
     }
+    /*logo guy*/
+
+    #default-logo-guy {
+        margin-left: 97em;
+        margin-top: 2em;
+    }
+
+    #logo-guy {
+        margin-left: 99em;
+    }
+
+    #circle-dude {
+        background-color: #00303F;
+        position: absolute;
+        margin-top: 3em;
+        margin-left: -7.9em;
+        width: 7.2em;
+        height: 7.2em;
+        border-top-left-radius: 12em;
+        border-top-right-radius: 12em;
+        border-bottom-right-radius: 12em;
+        border-bottom-left-radius: 12em;
+        z-index: 1;
+    }
+
+    #head {
+        background-color: #D31521;
+        position: absolute;
+        margin-top: 4em;
+        margin-left: -6em;
+        width: 3.5em;
+        height: 3.5em;
+        border-top-left-radius: 12em;
+        border-top-right-radius: 12em;
+        border-bottom-right-radius: 12em;
+        border-bottom-left-radius: 12em;
+        z-index: 2;
+    }
+
+    #mouth {
+        background-color: orange;
+        position: absolute;
+        margin-top: 5.2em;
+        margin-left: -5.4em;
+        width: 2.2em;
+        height: 1.4em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 2;
+    }
+
+    #lefteye {
+        background-color: black;
+        position: absolute;
+        margin-top: 5.2em;
+        margin-left: -5.4em;
+        width: .7em;
+        height: .7em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 3;
+    }
+
+    #righteye {
+        background-color: black;
+        position: absolute;
+        margin-top: 5.2em;
+        margin-left: -4em;
+        width: .7em;
+        height: .7em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 3;
+    }
+
+    #leftleg {
+        background-color: black;
+        position: absolute;
+        margin-top: 7.4em;
+        margin-left: -5.2em;
+        width: .3em;
+        height: .9em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 3;
+    }
+
+    #rightleg {
+        background-color: black;
+        position: absolute;
+        margin-top: 7.4em;
+        margin-left: -3.6em;
+        width: .3em;
+        height: .9em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 3;
+    }
+
+    #leftshoe {
+        background-color: #129490;
+        position: absolute;
+        margin-top: 8.3em;
+        margin-left: -6.3em;
+        width: 1.4em;
+        height: .5em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 3;
+    }
+
+    #rightshoe {
+        background-color: #129490;
+        position: absolute;
+        margin-top: 8.3em;
+        margin-left: -3.6em;
+        width: 1.4em;
+        height: .5em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        z-index: 3;
+    }
 
     @media (max-width: 992px) {
         .dashbored {
@@ -273,6 +447,18 @@
         }
         .btn {
             width: 85%;
+            font-size: .3em;
+            margin: .5em;
+        }
+        #sign-in {
+            font-size: 1.1em;
+        }
+        #guest-btn {
+            font-size: 1.1em;
+            width: 50%;
+        }
+        #register-btn {
+            font-size: 1.1em;
         }
         .usernName {
             display: none;
