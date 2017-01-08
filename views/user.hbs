@@ -345,23 +345,10 @@
 
     <script>
         var preferences = {
-                {
-                    {#
-                        each userInfo
-                    }
-                } {
-                    {
-                        @index
-                    }
-                }: {
-                    {
-                        pref_type_id
-                    }
-                },
-                {
-                    {
-                        /each}}
-                    }
+                {{#each userInfo}}
+                {{@index}}: {{pref_type_id}},
+                {{/each}}
+        }
 
                     var prefArr = []
                     for (key in preferences) {
