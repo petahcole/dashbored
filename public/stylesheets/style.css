@@ -160,13 +160,13 @@
     }
 
     .footer {
-      width: 100vw;
-      padding: 2em;
-      display: flex;
-      text-align: center; 
-      justify-content: center;
-      align-items: center;
-      font-family: 'Julius Sans One', sans-serif;
+        width: 100vw;
+        padding: 2em;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Julius Sans One', sans-serif;
     }
 
     .footer a {
@@ -257,6 +257,10 @@
     }
 
     @media (max-width: 992px) {
+        .dashbored {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
         header {
             display: flex;
             margin-bottom: .5em;
@@ -282,12 +286,19 @@
             display: block;
             font-size: .5em;
         }
-        #module {
+        #myGamesModule {
+            width: 90vw;
+        }
+        #mySportsModule {
+            width: 90vw;
+        }
+        .module {
             width: 90vw;
             padding-bottom: 18em;
         }
         .info-squares {
-            flex-wrap: wrap;
+            flex-flow: wrap;
+            /* justify-content: space-between; */
         }
         .wrap {
             width: 60%;
