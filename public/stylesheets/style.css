@@ -613,3 +613,13 @@ h3 {
   align-items: center;
   text-align: center;
 }
+
+.place-icon {
+  height: 2rem;
+}
+
+.place-heading h3 {
+  margin: 0;
+  margin-right: 0.7rem; 
+  display: inline-block;
+}
