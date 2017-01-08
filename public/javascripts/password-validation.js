@@ -40,7 +40,6 @@ $('#register-submit').click(function(event) {
     })
     .then(function(result){
         let id = result.userId;
-        console.log(`/users/${id}`);
         window.location = `/users/${id}`;
     }).catch(function(error) {
       $('.error-container').html(

@@ -46,13 +46,11 @@ router.get('/maps', function(req, res, next) {
 })
 
 router.get('/sports', function(req, res, next) {
-  console.log("ENDPOINT HIT");
     sports.getSports({
             source: 'espn',
             apiKey: 'a405b1953efe426d900f159c7ac4de98'
         })
         .then(body => {
-          console.log(body);
           res.render("sports", {
             sportsInfo: body,
             layout: false

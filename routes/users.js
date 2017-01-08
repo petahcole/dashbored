@@ -30,7 +30,7 @@ router.get('/:id', function(req, res, next) {
         .then(username => {
             userModel.loadDash(username[0].username)
                 .then(results => {
-                    console.log(results)
+                    console.log(results);
                     res.render("user", {
                         userInfo: results
                     })
@@ -39,11 +39,9 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/:id', function(req, res, next) {
-    console.log(req.body)
 });
 
 router.post('/', function(req, res, next) {
-            console.log(req.body);
             var userInfo = {
                 username: req.body.username,
                 password: bcrypt.hashSync(req.body.password),

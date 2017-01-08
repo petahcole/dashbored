@@ -18,18 +18,14 @@ router.get('/', function(req, res, next) {
 router.post('/login', function(req, res, next) {
     var username = req.body.user_name
     var password = req.body.password
-    console.log(username, password);
 
     userModel.validSignIn(username, password)
         .then(function(result) {
-          console.log("RESULT");
-          console.log(result);
             if (username == result[0].username && bcrypt.compareSync(password, result[0].password)) {
                 setCookie(res, {dashUsername: username}).then(function() {
                   let id = req.cookies.dashID
                   res.redirect(`/users/${id}`);
                 }).catch(function(err) {
-                  console.log(err);
                   res.redirect('/users/guest');
                 });
             } else {
@@ -41,7 +37,6 @@ router.post('/login', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
     res.clearCookie('dashId')
     res.redirect('/')
-    console.log('working');
 })
 
 

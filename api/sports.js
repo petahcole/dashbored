@@ -14,7 +14,6 @@ module.exports = (function() {
   }
 
   const getSports = function(queryObj) {
-    console.log("CALLING SPORTS API");
     let url = makeUrl(ENDPOINT, queryObj);
     return new Promise(function (resolve, reject) {
       request(url, function(err, res, body) {

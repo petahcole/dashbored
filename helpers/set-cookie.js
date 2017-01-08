@@ -11,7 +11,6 @@ module.exports = function setCookie(res, userObj) {
     } else {
       if (!userObj.dashId) {
         userModel.getUserByUsername(userObj.dashUsername).then(function(user) {
-          console.log(user);
           res.cookie('dashId', user.id);
           resolve(true);
         })
