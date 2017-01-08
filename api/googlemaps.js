@@ -9,7 +9,9 @@ module.exports = (function() {
         return {
           name: restaurant.name,
           address: restaurant.vicinity,
-          location: restaurant.geometry.location
+          location: restaurant.geometry.location,
+          icon: restaurant.icon,
+          placeId: restaurant.place_id
         }
       })
   }
