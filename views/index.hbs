@@ -49,7 +49,9 @@
 
                 <div class="form-group index-buttons">
                     <!-- <div class="col-sm-offset-2 col-sm-10"> -->
-
+                    {{#if errorMessage}}
+                    <p class="alert alert-danger">{{errorMessage}}</p>
+                    {{/if}}
                     <div class="index-button-container">
                         <button type="submit" class="btn reg-btn" id="sign-in">Sign in</button>
                         <a type="submit" class="btn reg-btn" href="/users/guest" id="guest-btn">Continue as Guest</a>

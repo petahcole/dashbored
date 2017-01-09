@@ -16,6 +16,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
+    if (!req.body.password || req.body.password.length < 5) {
+      res.render('index', {errorMessage: 'Username or password not valid'});
+    }
+
     var username = req.body.user_name
     var password = req.body.password
 

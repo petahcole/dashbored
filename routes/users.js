@@ -49,44 +49,51 @@ router.post('/:id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-            var userInfo = {
-                username: req.body.username,
-                password: bcrypt.hashSync(req.body.password),
-                email: req.body.email,
-                joined: new Date()
-            }
+    if (!req.body.password || req.body.password.length < 5) {
+      res.status(500).send({
+          message: 'password not long enough!!'
+      });
+    } else {
+      var userInfo = {
+          username: req.body.username,
+          password: bcrypt.hashSync(req.body.password),
+          email: req.body.email,
+          joined: new Date()
+      }
 
-            var userPrefIds = extractPrefIds(req.body.prefIds);
+      var userPrefIds = extractPrefIds(req.body.prefIds);
 
-            user.createUser(userInfo)
-                .then(function(result) {
-                    var userId = result[0];
-                    userPref.savePreferences(userId, userPrefIds).then(function(data) {
-                        setCookie(res, {
-                            dashId: userId
-                        }).then(() => {
-                            res.status(200).json({
-                                userId,
-                                message: 'User created!'
-                            })
-                        });
-                    })
-                })
-                .catch(function(err) {
-                    if (err.constraint === "user_username_unique") {
-                        res.status(500).send({
-                            message: 'User name taken already!'
-                        })
-                    } else if (err.constraint == "user_email_unique") {
-                        res.status(500).send({
-                            message: 'Email already taken!'
-                        })
-                    } else {
-                        res.status(500).send({
-                            message: err.constraint
-                        })
-                    }
-                })
+      user.createUser(userInfo)
+          .then(function(result) {
+              var userId = result[0];
+              userPref.savePreferences(userId, userPrefIds).then(function(data) {
+                  setCookie(res, {
+                      dashId: userId
+                  }).then(() => {
+                      res.status(200).json({
+                          userId,
+                          message: 'User created!'
+                      })
+                  });
+              })
+          })
+          .catch(function(err) {
+              if (err.constraint === "user_username_unique") {
+                  res.status(500).send({
+                      message: 'User name taken already!'
+                  })
+              } else if (err.constraint == "user_email_unique") {
+                  res.status(500).send({
+                      message: 'Email already taken!'
+                  })
+              } else {
+                  res.status(500).send({
+                      message: err.constraint
+                  })
+              }
+          })
+    }
+
         })
 
 
