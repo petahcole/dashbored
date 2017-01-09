@@ -7,6 +7,7 @@ body {
     background-image: url("https://camo.githubusercontent.com/77d51bed58191a49e5900e72fa45d8ab010b41c4/687474703a2f2f692e696d6775722e636f6d2f494d524c6c39442e706e67");
     background-size: cover;
     color: #C5C3c6;
+    height: 100vh;
 }
 
 main {
