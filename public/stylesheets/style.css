@@ -548,6 +548,11 @@ h3 {
     }
 }
 
+#gamesModal {
+    width: 90vw;
+    display: none;
+}
+
 @media (max-width: 425px) {
   .wrapper{
     display: flex;
