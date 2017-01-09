@@ -102,6 +102,7 @@ b {
 h1 {
     font-size: 2.8em !important;
 }
+
 .btn-container {
     display: flex;
     justify-content: center;
@@ -194,10 +195,12 @@ img {
     width: fit contents;
     height: fit contents;
 }
-.wrapper{
-  display: flex;
-  justify-content: flex-end;
+
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
 }
+
 .footer {
     width: 100vw;
     /*padding: 2em;*/
@@ -445,16 +448,18 @@ h3 {
     z-index: 3;
 }
 
-#register-button-container  {
-  margin-left: 10%;
+#register-button-container {
+    margin-left: 10%;
 }
-#logOutButton{
 
-  width: 33% !important;
+#logOutButton {
+    width: 33% !important;
 }
-#edit-btn{
-  width: 33% !important;
+
+#edit-btn {
+    width: 33% !important;
 }
+
 @media (max-width: 992px) {
     .dashbored {
         padding-left: 3em;
@@ -479,8 +484,8 @@ h3 {
         padding: 6px 10px;
     }
     #logOutButton {
-      display: flex;
-      flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
     }
     #sign-in {
         font-size: 1.1em;
@@ -545,8 +550,8 @@ h3 {
         position: baseline;
         bottom: 0;
     }
-    #register-button-container  {
-      margin-left: 33%;
+    #register-button-container {
+        margin-left: 33%;
     }
 }
 
@@ -556,22 +561,22 @@ h3 {
 }
 
 @media (max-width: 425px) {
-  .wrapper{
-    display: flex;
-    justify-content: flex-start;
-  }
-  .blockMe{
-    display: block;
-    text-align: center;
-  }
-  #logOutButton{
-    display: inline-block;
-    width: 27% !important;
-  }
-  #edit-btn{
-    display: inline-block;
-    width: 27% !important;
-  }
+    .wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .blockMe {
+        display: block;
+        text-align: center;
+    }
+    #logOutButton {
+        display: inline-block;
+        width: 27% !important;
+    }
+    #edit-btn {
+        display: inline-block;
+        width: 27% !important;
+    }
     .dashbored {
         padding-left: 3em;
         padding-right: 3em;
@@ -615,36 +620,36 @@ h3 {
         font-size: 1.5em;
         margin-top: 2em;
     }
-    #register-button-container  {
-      margin-left: 33%;
+    #register-button-container {
+        margin-left: 33%;
     }
 }
 
-.checkbox-fieldset > div.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.checkbox-fieldset>div.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
-.checkbox-fieldset  .form-group {
-  margin: 0;
-  margin-right: 2rem;
+.checkbox-fieldset .form-group {
+    margin: 0;
+    margin-right: 2rem;
 }
 
 #register-button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .place-icon {
-  height: 2rem;
+    height: 2rem;
 }
 
 .place-heading h3 {
-  margin: 0;
-  margin-right: 0.7rem;
-  display: inline-block;
+    margin: 0;
+    margin-right: 0.7rem;
+    display: inline-block;
 }
