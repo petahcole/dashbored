@@ -496,6 +496,7 @@ h3 {
         width: 70% !important;
         margin-top: 1em;
         float: none;
+        margin: 0 auto;
     }
     .usernName {
         display: none;
