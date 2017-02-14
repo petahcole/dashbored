@@ -11,8 +11,6 @@ var users = require('./routes/users');
 var templates = require('./routes/templates');
 var hbs = require('hbs');
 
-
-
 var app = express();
 
 
